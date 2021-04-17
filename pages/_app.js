@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import '../styles/globals.css'
 import { adobeLoader } from '../fonts/adobeLoader'
+import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
