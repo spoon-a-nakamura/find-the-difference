@@ -24,7 +24,6 @@ export default function Home() {
       </Title>
 
       <Description>どちらかのコースを選んでね。</Description>
-
       <CardWrapper>
         <Link href='start-animals'>
           <Card>
