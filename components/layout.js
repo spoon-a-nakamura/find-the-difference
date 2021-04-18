@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
-import Footer from '../components/Footer'
-import ChangeScreen from '../components/ChangeScreen'
+import Footer from './Footer'
+import ChangeScreen from './ChangeScreen'
 
 export default function Layout({ children }) {
   return (
