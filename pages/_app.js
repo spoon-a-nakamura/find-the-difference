@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React, { useEffect } from 'react'
 import { adobeLoader } from '../fonts/adobeLoader'
 import { AnimateSharedLayout } from 'framer-motion'
-import Layout from '../components/Layout'
+import Container from '../components/Container'
 import GlobalCss from '../components/GlobalCss'
 
 export default function App({ Component, pageProps, router }) {
@@ -17,9 +17,9 @@ export default function App({ Component, pageProps, router }) {
       </Head>
       <GlobalCss />
       <AnimateSharedLayout>
-        <Layout key={router.route} key={router.route}>
+        <Container key={router.route} key={router.route}>
           <Component {...pageProps} />
-        </Layout>
+        </Container>
       </AnimateSharedLayout>
     </>
   )

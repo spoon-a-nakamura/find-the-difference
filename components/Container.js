@@ -2,18 +2,18 @@ import styled from '@emotion/styled'
 import Footer from './Footer'
 import ChangeScreen from './ChangeScreen'
 
-export default function Layout({ children }) {
+export default function Container({ children }) {
   return (
-    <Container>
+    <ContainerWrapper>
       <ChangeScreen>
         <Main>{children}</Main>
       </ChangeScreen>
       <Footer />
-    </Container>
+    </ContainerWrapper>
   )
 }
 
-const Container = styled.div`
+const ContainerWrapper = styled.div`
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
