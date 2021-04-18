@@ -9,10 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <title>まちがい探し | スタジオスプーン</title>
-          <link rel='icon' href='/images/common/favicon.ico' />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
