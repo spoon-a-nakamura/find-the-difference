@@ -1,7 +1,7 @@
-import styled from '@emotion/styled'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import styled from '@emotion/styled'
 
 export default function Home() {
   return (
@@ -24,18 +24,18 @@ export default function Home() {
         <Description>どちらかのコースを選んでね。</Description>
 
         <CardWrapper>
-          <Link href=''>
+          <Link href='/animals'>
             <Card>
               <CardTitle>
-                どうぶつ<span>コース</span>
+                どうぶつ<CardTitleMini>コース</CardTitleMini>
               </CardTitle>
             </Card>
           </Link>
 
-          <Link href=''>
+          <Link href='/magic'>
             <Card>
               <CardTitle>
-                まほう<span>コース</span>
+                まほう<CardTitleMini>コース</CardTitleMini>
               </CardTitle>
             </Card>
           </Link>
@@ -54,6 +54,7 @@ export default function Home() {
     </Container>
   )
 }
+
 const Container = styled.div`
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -86,17 +87,8 @@ const CardWrapper = styled.div`
   width: 100%;
 `
 
-const Footer = styled.footer`
-  width: 100%;
-  padding: 10px;
-  font-size: 12px;
-  background: #f7f7f7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
 const Card = styled.div`
-  background: rgba(#e2e2e2, 0.3);
+  background: rgba(226, 226, 226, 0.3);
   width: 48%;
   display: flex;
   text-align: center;
@@ -109,8 +101,18 @@ const CardTitle = styled.h2`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  span {
-    display: block;
-    font-size: 14px;
-  }
+`
+const CardTitleMini = styled.span`
+  display: block;
+  font-size: 14px;
+`
+
+const Footer = styled.footer`
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
