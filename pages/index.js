@@ -1,10 +1,19 @@
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from '@emotion/styled'
+import Splash from '../components/Splash'
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1500)
+  }, [])
   return (
     <>
+      <Splash isShow={isLoading} />
       <Title>
         <Image
           src='/images/common/logo.svg'
