@@ -4,7 +4,7 @@ import { adobeLoader } from '../fonts/adobeLoader'
 import '../styles/globals.scss'
 import Layout from '../components/layout'
 
-function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   useEffect(() => {
     if (process.browser) adobeLoader(document)
   }, [])
@@ -20,5 +20,3 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-
-export default MyApp
