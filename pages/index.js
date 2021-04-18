@@ -17,7 +17,7 @@ export default function Home() {
       <Description>どちらかのコースを選んでね。</Description>
 
       <CardWrapper>
-        <Link href='/start-animals'>
+        <Link href='start-animals'>
           <Card>
             <CardTitle>
               どうぶつ<CardTitleMini>コース</CardTitleMini>
@@ -25,7 +25,7 @@ export default function Home() {
           </Card>
         </Link>
 
-        <Link href='/start-magic'>
+        <Link href='start-magic'>
           <Card>
             <CardTitle>
               まほう<CardTitleMini>コース</CardTitleMini>
