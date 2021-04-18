@@ -16,7 +16,7 @@ export default function Footer() {
 
 const FooterWrapper = styled.footer`
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   font-size: 12px;
   background: #f7f7f7;
   display: flex;
