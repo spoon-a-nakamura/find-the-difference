@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="222" height="89" viewBox="0 0 222 89">
+  <g id="グループ_11" data-name="グループ 11" transform="translate(-77 -340)">
+    <rect id="長方形_11" data-name="長方形 11" width="222" height="89" transform="translate(77 340)" fill="#fff"/>
+    <g id="楕円形_4" data-name="楕円形 4" transform="translate(121 362)" fill="none" stroke="#ead113" stroke-width="5">
+      <circle cx="23.5" cy="23.5" r="23.5" stroke="none"/>
+      <circle cx="23.5" cy="23.5" r="21" fill="none"/>
+    </g>
+    <text id="_" data-name="×" transform="translate(190 392)" fill="#707070" font-size="20" font-family="Kan412TyposStd-Regular, Kan412Typos Std"><tspan x="-10" y="0">×</tspan></text>
+    <text id="_個" data-name="４個" transform="translate(232 392)" fill="#707070" font-size="20" font-family="VDL-MegaMaru-Regular, VDL-MegaMaru"><tspan x="-20" y="0">４個</tspan></text>
+  </g>
+</svg>
