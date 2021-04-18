@@ -46,10 +46,13 @@ export default function Home() {
   )
 }
 
-const Title = styled.h1``
+const Title = styled.h1`
+  margin: 40px 0 70px;
+`
 
 const Description = styled.p`
   font-size: 16px;
+  margin-bottom: 30px;
 `
 
 const CardWrapper = styled.div`
@@ -58,6 +61,7 @@ const CardWrapper = styled.div`
   flex-wrap: wrap;
   min-height: 50vh;
   width: 100%;
+  margin-bottom: auto;
 `
 
 const Card = styled.div`
@@ -78,4 +82,5 @@ const CardTitle = styled.h2`
 const CardTitleMini = styled.span`
   display: block;
   font-size: 14px;
+  margin-top: 10px;
 `

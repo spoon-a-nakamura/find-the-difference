@@ -22,28 +22,25 @@ export default function StartAnimals() {
 
 const Title = styled.h1`
   background: rgba(226, 226, 226, 0.3);
-  padding: 10px 20px;
+  padding: 20px 30px;
   font-size: 20px;
-  margin-bottom: 0;
 `
 const Descriptions = styled.div`
   background: rgba(226, 226, 226, 0.3);
-  margin: 0;
-  width: 90%;
+  width: 95%;
 `
 const StageName = styled.h2`
   font-size: 16px;
-  margin: 20px 0 0;
+  margin-top: 30px;
 `
 const Number = styled.p`
   font-size: 30px;
-  margin: 0;
+  margin: 15px 0;
 `
 const Span = styled.p`
   font-size: 14px;
-  margin: 0;
 `
 const ImageWrapper = styled.div`
   min-width: 270px;
-  margin: 20px 0;
+  margin: 25px 0;
 `
