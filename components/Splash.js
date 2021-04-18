@@ -19,7 +19,7 @@ export default function Splash({ isShow }) {
   )
 }
 
-const Title = styled.h1``
+const Title = styled.div``
 
 const Symbol = styled.div`
   width: 100%;
@@ -30,15 +30,12 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   flex-direction: column;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: calc(100% - 44px);
   z-index: 99999;
   background: #fff;
-  transition: opacity 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   &[data-is-show='false'] {
     opacity: 0;
     pointer-events: none;
