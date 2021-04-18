@@ -37,6 +37,7 @@ const IconsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: -20px;
+  margin-top: auto;
 `
 const Icons = styled.ul`
   display: flex;

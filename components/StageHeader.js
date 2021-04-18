@@ -28,7 +28,7 @@ export default function StageHeader({ title, name }) {
 
 const StageHeaderWrapper = styled.header`
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px;
   font-size: 12px;
   display: flex;
   justify-content: center;
