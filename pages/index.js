@@ -5,53 +5,53 @@ import styled from '@emotion/styled'
 
 export default function Home() {
   return (
-    <Container>
+    <>
       <Head>
         <title>まちがい探し | スタジオスプーン</title>
-        <link rel='icon' href='/images/common/favicon.ico' />
       </Head>
+      <Container>
+        <Main>
+          <Title>
+            <Image
+              src='/images/common/logo.svg'
+              width={212}
+              height={46.18}
+              alt='スタジオスプーンの間違い探し'
+            />
+          </Title>
 
-      <Main>
-        <Title>
-          <Image
-            src='/images/common/logo.svg'
-            width={212}
-            height={46.18}
-            alt='スタジオスプーンの間違い探し'
-          />
-        </Title>
+          <Description>どちらかのコースを選んでね。</Description>
 
-        <Description>どちらかのコースを選んでね。</Description>
+          <CardWrapper>
+            <Link href='/animals'>
+              <Card>
+                <CardTitle>
+                  どうぶつ<CardTitleMini>コース</CardTitleMini>
+                </CardTitle>
+              </Card>
+            </Link>
 
-        <CardWrapper>
-          <Link href='/animals'>
-            <Card>
-              <CardTitle>
-                どうぶつ<CardTitleMini>コース</CardTitleMini>
-              </CardTitle>
-            </Card>
-          </Link>
+            <Link href='/magic'>
+              <Card>
+                <CardTitle>
+                  まほう<CardTitleMini>コース</CardTitleMini>
+                </CardTitle>
+              </Card>
+            </Link>
+          </CardWrapper>
+        </Main>
 
-          <Link href='/magic'>
-            <Card>
-              <CardTitle>
-                まほう<CardTitleMini>コース</CardTitleMini>
-              </CardTitle>
-            </Card>
-          </Link>
-        </CardWrapper>
-      </Main>
-
-      <Footer>
-        <a
-          href='https://studio-spoon.co.jp'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          &copy; STUDIO SPOON.inc
-        </a>
-      </Footer>
-    </Container>
+        <Footer>
+          <a
+            href='https://studio-spoon.co.jp'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            &copy; STUDIO SPOON.inc
+          </a>
+        </Footer>
+      </Container>
+    </>
   )
 }
 
