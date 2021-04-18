@@ -1,63 +1,116 @@
+import styled from '@emotion/styled'
 import Head from 'next/head'
-import styles from '../styles/pages/Home.module.scss'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <title>まちがい探し | スタジオスプーン</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/images/common/favicon.ico' />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>スタジオスプーンの間違い探し</h1>
+      <Main>
+        <Title>
+          <Image
+            src='/images/common/logo.svg'
+            width={212}
+            height={46.18}
+            alt='スタジオスプーンの間違い探し'
+          />
+        </Title>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <Description>どちらかのコースを選んでね。</Description>
 
-        <div className={styles.grid}>
-          <a href='https://nextjs.org/docs' className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <CardWrapper>
+          <Link href=''>
+            <Card>
+              <CardTitle>
+                どうぶつ<span>コース</span>
+              </CardTitle>
+            </Card>
+          </Link>
 
-          <a href='https://nextjs.org/learn' className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <Link href=''>
+            <Card>
+              <CardTitle>
+                まほう<span>コース</span>
+              </CardTitle>
+            </Card>
+          </Link>
+        </CardWrapper>
+      </Main>
 
-          <a
-            href='https://github.com/vercel/next.js/tree/master/examples'
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
+      <Footer>
         <a
-          href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
+          href='https://studio-spoon.co.jp'
           target='_blank'
           rel='noopener noreferrer'
         >
-          Powered by{' '}
-          <img src='/vercel.svg' alt='Vercel Logo' className={styles.logo} />
+          &copy; STUDIO SPOON.inc
         </a>
-      </footer>
-    </div>
+      </Footer>
+    </Container>
   )
 }
+const Container = styled.div`
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`
+
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 95%;
+`
+const Title = styled.h1``
+
+const Description = styled.p`
+  font-size: 16px;
+`
+
+const CardWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 50vh;
+  width: 100%;
+`
+
+const Footer = styled.footer`
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const Card = styled.div`
+  background: rgba(#e2e2e2, 0.3);
+  width: 48%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+`
+
+const CardTitle = styled.h2`
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  span {
+    display: block;
+    font-size: 14px;
+  }
+`
