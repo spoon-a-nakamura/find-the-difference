@@ -6,15 +6,16 @@ export default function StartAnimals() {
   return (
     <>
       <Title>ミッション</Title>
+      <Descriptions>
+        <StageName>どうぶつステージ 01</StageName>
+        <Number>４個</Number>
+        <Span>の違うところを探してください。</Span>
+        <ImageWrapper>
+          <Image src='/images/common/mission.svg' width={270} height={89} />
+        </ImageWrapper>
+      </Descriptions>
       <Link href='animals'>
-        <Descriptions>
-          <StageName>どうぶつステージ 01</StageName>
-          <Number>４個</Number>
-          <Span>の違うところを探してください。</Span>
-          <ImageWrapper>
-            <Image src='/images/common/mission.svg' width={270} height={89} />
-          </ImageWrapper>
-        </Descriptions>
+        <StartButton>START</StartButton>
       </Link>
     </>
   )
@@ -43,4 +44,12 @@ const Span = styled.p`
 const ImageWrapper = styled.div`
   min-width: 270px;
   margin: 25px 0;
+`
+const StartButton = styled.div`
+  padding: 20px;
+  width: 95%;
+  margin-top: 20px;
+  background: #333;
+  color: #fff;
+  border-radius: 100px;
 `
