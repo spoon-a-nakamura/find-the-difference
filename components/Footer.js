@@ -22,4 +22,5 @@ const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 `
