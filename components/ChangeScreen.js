@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion'
 
-export default function ScreenNext({ children }) {
+export default function ChangeScreen({ children }) {
   return (
     <motion.div
       animate={{
-        x: 0,
+        scale: 1,
         opacity: 1,
       }}
       initial={{
-        x: 100,
+        scale: 0.9,
         opacity: 0,
       }}
       exit={{
-        x: -100,
+        scale: 0.9,
         opacity: 0,
       }}
       transition={{
@@ -24,6 +24,7 @@ export default function ScreenNext({ children }) {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
+        flex: 1,
       }}
     >
       {children}

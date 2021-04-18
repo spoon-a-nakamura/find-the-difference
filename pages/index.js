@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Splash isShow={isLoading} />
+
       <Title>
         <Image
           src='/images/common/logo.svg'

@@ -1,10 +1,14 @@
+import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import Footer from '../components/Footer'
+import ChangeScreen from '../components/ChangeScreen'
 
 export default function Layout({ children }) {
   return (
     <Container>
-      <Main>{children}</Main>
+      <ChangeScreen>
+        <Main>{children}</Main>
+      </ChangeScreen>
       <Footer />
     </Container>
   )
