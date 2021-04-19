@@ -11,7 +11,7 @@ export default function Animals() {
   }
   return (
     <>
-      <Header title='どうぶつステージ  01' name='いぬ' />
+      <Header title='どうぶつステージ  01' name='ねこ' />
       <CanvasWrapper>
         <CanvasA>
           <Image src='/images/animals/01a@3x.png' width='332' height='249' />

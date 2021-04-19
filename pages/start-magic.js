@@ -27,6 +27,7 @@ const Title = styled.h1`
 const Descriptions = styled.div`
   background: rgba(226, 226, 226, 0.3);
   width: 95%;
+  margin-bottom: 30px;
 `
 const StageName = styled.h2`
   font-size: 16px;
