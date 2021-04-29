@@ -14,13 +14,15 @@ export default function Container({ children }) {
 }
 
 const ContainerWrapper = styled.div`
-  min-height: 100vh;
-  padding: 0 0.5rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: #f2f2e9 url(/images/common/bg.svg) center / cover;
 `
 
 const Main = styled.div`
@@ -28,6 +30,6 @@ const Main = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 1;
   width: 95%;
+  height: 100%;
 `
