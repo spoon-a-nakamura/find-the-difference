@@ -5,21 +5,7 @@ import Image from 'next/image'
 import StageHeader from './StageHeader'
 import StageModal from './StageModal'
 import CountIcons from './CountIcons'
-
-const points = [
-  {
-    top: 20,
-    left: 42,
-  },
-  {
-    top: 50,
-    left: 13,
-  },
-  {
-    top: 60,
-    left: 73,
-  },
-]
+import { points } from '../resources/question'
 
 export default function Stage() {
   const [checkedState, setCheckedState] = useState(
