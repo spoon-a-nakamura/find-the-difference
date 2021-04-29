@@ -4,7 +4,12 @@ import { colors } from '../components/Colors'
 import Container from '../components/Container'
 import { device } from '../components/MediaQuery'
 
-export default function Mission({ categoryName, stageNumber, correctNumber }) {
+export default function Mission({
+  categoryName,
+  stageNumber,
+  correctNumber,
+  href,
+}) {
   return (
     <Container>
       <MissionWrapper>
@@ -21,7 +26,7 @@ export default function Mission({ categoryName, stageNumber, correctNumber }) {
             <CorrectIconNumber>× {correctNumber}個</CorrectIconNumber>
           </MissionBottom>
         </MissionContents>
-        <Link href='stage'>
+        <Link href={href}>
           <StartButton>START</StartButton>
         </Link>
       </MissionWrapper>

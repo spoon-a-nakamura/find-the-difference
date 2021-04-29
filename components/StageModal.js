@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { colors } from '../components/Colors'
 import Character from '../components/Character'
-import { useRouter } from 'next/router'
 
 export default function StageModal({
   isCleared,
@@ -28,8 +27,13 @@ export default function StageModal({
       <ClearText6>!</ClearText6>
     </ClearText>
   )
-  const router = useRouter()
-  const reload = router.reload
+  // const router = useRouter()
+  // const reload = router.reload
+  const currentIdNumber = Number(stageId)
+  const nextIdNumber = currentIdNumber + 1
+  const nextIdString = String(nextIdNumber)
+  const nextIdStringZeroPadding = ('00' + nextIdString).slice(-2)
+  const href = 11 > nextIdStringZeroPadding ? nextIdStringZeroPadding : '01'
 
   return (
     <>
@@ -46,10 +50,9 @@ export default function StageModal({
           <Result isCleared={isCleared}>
             {isCleared ? clearText : 'GAME OVER'}
           </Result>
-          <Button onClick={isCleared ? reload : reload}>
-            {isCleared ? '次のステージへ' : 'リトライ'}
-          </Button>
-
+          <Link href={`/animal/${href}`}>
+            <Button>{isCleared ? '次のステージへ' : 'リトライ'}</Button>
+          </Link>
           <Link href='/'>
             <BackHome>HOMEに戻る</BackHome>
           </Link>
