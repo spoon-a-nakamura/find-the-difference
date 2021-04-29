@@ -7,8 +7,8 @@ import { useRouter } from 'next/router'
 export default function StageModal({
   isCleared,
   isFailed,
+  stageId,
   stageCategory,
-  stageNumber,
 }) {
   const eyeAnimateCleared = {
     x: [0, 5, -7, 8, 0],
@@ -41,7 +41,7 @@ export default function StageModal({
         </CharacterWrapper>
         <ModalContainer isCleared={isCleared} isOpen={isCleared || isFailed}>
           <StageName isCleared={isCleared}>
-            {stageCategory}ステージ {stageNumber}
+            {stageCategory}ステージ {stageId}
           </StageName>
           <Result isCleared={isCleared}>
             {isCleared ? clearText : 'GAME OVER'}

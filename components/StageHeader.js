@@ -1,15 +1,17 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-export default function StageHeader({ title, name }) {
+export default function StageHeader({ stageCategory, stageId, stageName }) {
   return (
     <StageHeaderWrapper>
       <Link href='/'>
         <HomeButton src='/images/stage/button_home.svg' alt='homeに戻る' />
       </Link>
       <StageHeaderTitle>
-        <StageTitle>{title}</StageTitle>
-        <StageName>{name}</StageName>
+        <StageTitle>
+          {stageCategory}ステージ {stageId}
+        </StageTitle>
+        <StageName>{stageName}</StageName>
       </StageHeaderTitle>
     </StageHeaderWrapper>
   )

@@ -19,7 +19,6 @@ const IconsWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
 `
 const Icons = styled.ul`
   display: flex;

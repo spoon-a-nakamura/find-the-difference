@@ -5,7 +5,18 @@ import Image from 'next/image'
 import StageHeader from './StageHeader'
 import StageModal from './StageModal'
 import CountIcons from './CountIcons'
-import { points } from '../resources/question'
+import { colors } from './Colors'
+import { questions } from '../resources/question'
+
+const points = questions[0].points
+const stageId = questions[0].stageId
+const stageName = questions[0].stageName
+const stageCategory = questions[0].stageCategory
+console.log(questions)
+console.log(points)
+console.log(stageId)
+console.log(stageName)
+console.log(stageCategory)
 
 export default function Stage() {
   // クリア / ゲームオーバー判定のState定義
@@ -71,53 +82,83 @@ export default function Stage() {
 
   return (
     <>
-      <StageModal isCleared={isCleared} isFailed={isFailed} />
-      <StageHeader title='どうぶつステージ 01' name='ねこ' />
-      残り時間：{countTimer}
-      <CanvasWrapper
-        onClick={() => {
-          setCountTimer((count) => {
-            if (count < 5) {
-              setIsFailed(true)
-              return (count = 0)
-            } else {
-              return count - 5
-            }
-          })
-        }}
-      >
-        <CanvasA>
-          <Image src='/images/animals/01a@3x.png' width='332' height='249' />
-          {points.map(({ top, left }, index) => (
-            <CorrectPoint
-              key={index}
-              top={top}
-              left={left}
-              clicked={checkedState[index]}
-              onClick={() => showCorrect(index, checkedState[index])}
-            />
-          ))}
-        </CanvasA>
-        <CanvasB>
-          <Image src='/images/animals/01b@3x.png' width='332' height='249' />
-          {points.map(({ top, left }, index) => (
-            <CorrectPoint
-              key={index}
-              top={top}
-              left={left}
-              clicked={checkedState[index]}
-              onClick={() => showCorrect(index, checkedState[index])}
-            />
-          ))}
-        </CanvasB>
-      </CanvasWrapper>
-      <CountIcons states={currentIconState} />
+      <StageModal
+        isCleared={isCleared}
+        isFailed={isFailed}
+        stageId={stageId}
+        stageCategory={stageCategory}
+      />
+      <StageHeader
+        stageId={stageId}
+        stageName={stageName}
+        stageCategory={stageCategory}
+      />
+      <StageWrapper>
+        <StageTimer>残り時間：{countTimer}</StageTimer>
+        <CanvasWrapper
+          onClick={() => {
+            setCountTimer((count) => {
+              if (count < 5) {
+                setIsFailed(true)
+                return (count = 0)
+              } else {
+                return count - 5
+              }
+            })
+          }}
+        >
+          <CanvasA>
+            <Image src='/images/animals/01a@3x.png' width='332' height='249' />
+            {points.map(({ top, left }, index) => (
+              <CorrectPoint
+                key={index}
+                top={top}
+                left={left}
+                clicked={checkedState[index]}
+                onClick={() => showCorrect(index, checkedState[index])}
+              />
+            ))}
+          </CanvasA>
+          <CanvasB>
+            <Image src='/images/animals/01b@3x.png' width='332' height='249' />
+            {points.map(({ top, left }, index) => (
+              <CorrectPoint
+                key={index}
+                top={top}
+                left={left}
+                clicked={checkedState[index]}
+                onClick={() => showCorrect(index, checkedState[index])}
+              />
+            ))}
+          </CanvasB>
+        </CanvasWrapper>
+        <CountIcons states={currentIconState} />
+      </StageWrapper>
     </>
   )
 }
-
+const StageWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 90px);
+`
+const StageTimer = styled.p`
+  font-size: 14px;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 100px;
+  color: ${colors.black};
+`
 const CanvasWrapper = styled.div`
   position: relative;
+  width: 80%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
 `
 const CanvasA = styled.div`
   position: relative;
@@ -125,7 +166,6 @@ const CanvasA = styled.div`
 const CanvasB = styled.div`
   position: relative;
 `
-
 const CorrectPoint = styled.div`
   position: absolute;
   width: 30px;
@@ -140,7 +180,7 @@ const CorrectPoint = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    border: 5px solid #ead113;
+    border: 5px solid ${colors.yellow};
     transition: all ease-in-out 0.3s;
     will-change: animation;
     animation: bound forwards 0.6s ease-in-out;
