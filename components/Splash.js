@@ -1,29 +1,45 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function Splash({ isShow }) {
+  const eyeAnimate = {
+    x: [0, 5, -10, 10, 0],
+    y: [0, 1, 1, -1, 0],
+  }
+  const eyeTransition = {
+    repeat: Infinity,
+    repeatDelay: 1,
+    type: 'tween',
+    duration: 10,
+  }
+  const startAnimate = {
+    scale: [1, 0.95, 1.05, 0.98, 1.01, 0.99, 1],
+  }
+  const startTransition = {
+    repeat: Infinity,
+    repeatDelay: 1,
+    type: 'tween',
+    duration: 2,
+  }
   return (
-    <Wrapper data-is-show={isShow}>
-      <Title>
-        <Image
-          src='/images/common/logo.svg'
-          alt='スタジオスプーンの間違い探し'
-          width={270}
-          height={66.74}
-        />
-      </Title>
-      <Symbol>
-        <Image src='/images/common/main-icon.svg' width={270} height={270} />
-      </Symbol>
-    </Wrapper>
+    <Link href='menu'>
+      <Wrapper isShow={isShow}>
+        <Title>
+          <TitleSub>スタジオスプーンの</TitleSub>
+          <TitleMain>まちがい探し</TitleMain>
+        </Title>
+        <Face>
+          <LeftEye animate={eyeAnimate} transition={eyeTransition} />
+          <RightEye animate={eyeAnimate} transition={eyeTransition} />
+        </Face>
+        <Start animate={startAnimate} transition={startTransition}>
+          TAP TO START
+        </Start>
+      </Wrapper>
+    </Link>
   )
 }
-
-const Title = styled.div``
-
-const Symbol = styled.div`
-  width: 100%;
-`
 
 const Wrapper = styled.div`
   position: fixed;
@@ -32,12 +48,49 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: calc(100% - 44px);
-  z-index: 99999;
-  background: #fff;
-  transition: all 0.5s ease-in-out;
-  &[data-is-show='false'] {
-    opacity: 0;
-    pointer-events: none;
-  }
+  height: 100%;
+  background: #298c6d;
+  /* transition: all 0.5s ease-in-out; */
+  /* opacity: ${({ isShow }) => (isShow ? 1 : 0)}; */
+  /* pointer-events: ${({ isShow }) => (isShow ? 'initial' : 'none')}; */
+`
+const Title = styled.div`
+  color: #fff;
+  text-align: center;
+`
+const TitleSub = styled.div`
+  font-size: 16px;
+  margin-bottom: 5px;
+`
+const TitleMain = styled.div`
+  font-size: 40px;
+`
+const Face = styled.div`
+  width: 268px;
+  height: 308px;
+  background: url(/images/common/face@2x.png) center / contain no-repeat;
+  display: flex;
+  justify-content: center;
+`
+const LeftEye = styled(motion.div)`
+  width: 40px;
+  height: 40px;
+  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
+  margin-right: 30px;
+  margin-top: 115px;
+  position: relative;
+`
+const RightEye = styled(motion.div)`
+  width: 40px;
+  height: 40px;
+  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
+  margin-top: 115px;
+  position: relative;
+`
+const Start = styled(motion.div)`
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  font-weight: bold;
 `
