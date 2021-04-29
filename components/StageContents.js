@@ -12,6 +12,7 @@ export default function StageContents({ question }) {
   const stageId = question.stageId
   const stageName = question.stageName
   const stageCategory = question.stageCategory
+  const stageSlug = question.stageSlug
   const stageImageA = question.stageImageA
   const stageImageB = question.stageImageB
 
@@ -83,6 +84,7 @@ export default function StageContents({ question }) {
         isFailed={isFailed}
         stageId={stageId}
         stageCategory={stageCategory}
+        stageSlug={stageSlug}
       />
       <StageHeader
         stageId={stageId}

@@ -8,6 +8,7 @@ export default function StageModal({
   isFailed,
   stageId,
   stageCategory,
+  stageSlug,
 }) {
   const eyeAnimateCleared = {
     x: [0, 5, -7, 8, 0],
@@ -34,6 +35,7 @@ export default function StageModal({
   const nextIdString = String(nextIdNumber)
   const nextIdStringZeroPadding = ('00' + nextIdString).slice(-2)
   const href = 11 > nextIdStringZeroPadding ? nextIdStringZeroPadding : '01'
+  console.log(stageSlug)
 
   return (
     <>
@@ -50,7 +52,7 @@ export default function StageModal({
           <Result isCleared={isCleared}>
             {isCleared ? clearText : 'GAME OVER'}
           </Result>
-          <Link href={`/animal/${href}`}>
+          <Link href={`/${stageSlug}/${href}`}>
             <Button>{isCleared ? '次のステージへ' : 'リトライ'}</Button>
           </Link>
           <Link href='/'>

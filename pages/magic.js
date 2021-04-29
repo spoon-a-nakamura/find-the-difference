@@ -4,6 +4,7 @@ const courseValues = {
   categoryName: 'まほう',
   stageNumber: '01',
   correctNumber: '4',
+  href: 'magic/01',
 }
 
 export default function CourseAnimals() {
@@ -13,6 +14,7 @@ export default function CourseAnimals() {
         categoryName={courseValues.categoryName}
         stageNumber={courseValues.stageNumber}
         correctNumber={courseValues.correctNumber}
+        href={courseValues.href}
       />
     </>
   )

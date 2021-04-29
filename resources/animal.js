@@ -3,6 +3,7 @@ export const questions = [
     stageId: '01',
     stageName: 'いぬ',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/01a@2x.png',
     stageImageB: '/images/animal/01b@2x.png',
     points: [
@@ -24,6 +25,7 @@ export const questions = [
     stageId: '02',
     stageName: 'ねこ',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/02a@2x.png',
     stageImageB: '/images/animal/02b@2x.png',
     points: [
@@ -45,6 +47,7 @@ export const questions = [
     stageId: '03',
     stageName: 'きりん',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/03a@2x.png',
     stageImageB: '/images/animal/03b@2x.png',
     points: [
@@ -66,6 +69,7 @@ export const questions = [
     stageId: '04',
     stageName: 'ぞう',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/04a@2x.png',
     stageImageB: '/images/animal/04b@2x.png',
     points: [
@@ -87,6 +91,7 @@ export const questions = [
     stageId: '05',
     stageName: 'コアラ',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/05a@2x.png',
     stageImageB: '/images/animal/05b@2x.png',
     points: [
@@ -108,6 +113,7 @@ export const questions = [
     stageId: '06',
     stageName: 'チーター',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/06a@2x.png',
     stageImageB: '/images/animal/06b@2x.png',
     points: [
@@ -129,6 +135,7 @@ export const questions = [
     stageId: '07',
     stageName: 'ワニ',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/07a@2x.png',
     stageImageB: '/images/animal/07b@2x.png',
     points: [
@@ -150,6 +157,7 @@ export const questions = [
     stageId: '08',
     stageName: 'ねずみ',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/08a@2x.png',
     stageImageB: '/images/animal/08b@2x.png',
     points: [
@@ -171,6 +179,7 @@ export const questions = [
     stageId: '09',
     stageName: 'うさぎ',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/09a@2x.png',
     stageImageB: '/images/animal/09b@2x.png',
     points: [
@@ -192,6 +201,7 @@ export const questions = [
     stageId: '10',
     stageName: 'さる',
     stageCategory: 'どうぶつ',
+    stageSlug: 'animal',
     stageImageA: '/images/animal/10a@2x.png',
     stageImageB: '/images/animal/10b@2x.png',
     points: [
