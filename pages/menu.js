@@ -6,8 +6,8 @@ import { colors } from '../components/Colors'
 
 export default function Menu() {
   const eyeAnimate = {
-    x: [0, 5, -10, 10, 0],
-    y: [0, 1, 1, -1, 0],
+    x: [0, 5, -7, 8, 0],
+    y: [10, 14, 13, 11, 10],
   }
   const eyeTransition = {
     repeat: Infinity,
@@ -15,14 +15,17 @@ export default function Menu() {
     type: 'tween',
     duration: 10,
   }
-  const startAnimate = {
-    scale: [1, 0.95, 1.05, 0.98, 1.01, 0.99, 1],
+  const tagAnimateAnimal = {
+    rotate: [0, 5, -2, 10, -3, 0],
   }
-  const startTransition = {
+  const tagAnimateMagic = {
+    rotate: [0, 10, 3, 4, 0],
+  }
+  const tagTransition = {
     repeat: Infinity,
     repeatDelay: 1,
     type: 'tween',
-    duration: 2,
+    duration: 5,
   }
   return (
     <Container>
@@ -47,13 +50,19 @@ export default function Menu() {
         <Cards>
           <Link href='course-animals'>
             <AnimalCard>
-              <AnimalCardTag />
+              <AnimalCardTag
+                animate={tagAnimateAnimal}
+                transition={tagTransition}
+              />
               <AnimalCardCaption>ANIMAL</AnimalCardCaption>
             </AnimalCard>
           </Link>
           <Link href='course-magic'>
             <MagicCard>
-              <MagicCardTag />
+              <MagicCardTag
+                animate={tagAnimateMagic}
+                transition={tagTransition}
+              />
               <MagicCardCaption>MAGIC</MagicCardCaption>
             </MagicCard>
           </Link>
@@ -171,7 +180,7 @@ const AnimalCard = styled.div`
   display: flex;
   justify-content: center;
 `
-const AnimalCardTag = styled.div`
+const AnimalCardTag = styled(motion.div)`
   background: url(/images/common/tag_animal.svg) center / contain no-repeat;
   width: 156px;
   height: 61px;
@@ -181,7 +190,7 @@ const AnimalCardTag = styled.div`
 `
 const AnimalCardCaption = styled.p`
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
   position: absolute;
   bottom: -20px;
@@ -195,7 +204,7 @@ const MagicCard = styled.div`
   display: flex;
   justify-content: center;
 `
-const MagicCardTag = styled.div`
+const MagicCardTag = styled(motion.div)`
   background: url(/images/common/tag_magic.svg) center / contain no-repeat;
   width: 156px;
   height: 61px;
@@ -205,7 +214,7 @@ const MagicCardTag = styled.div`
 `
 const MagicCardCaption = styled.p`
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
   position: absolute;
   bottom: -20px;
