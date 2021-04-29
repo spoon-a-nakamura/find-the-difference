@@ -1,28 +1,14 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
 
 export default function CountIcons({ states }) {
-  const onFlag = (
-    <Image
-      src='/images/stage/icon-count-on.svg'
-      alt='on'
-      width={40}
-      height={40}
-    />
-  )
-  const offFlag = (
-    <Image
-      src='/images/stage/icon-count-off.svg'
-      alt='off'
-      width={40}
-      height={40}
-    />
-  )
-  const countFlags = states.map((state) => (state ? onFlag : offFlag))
+  const onFlag = <IconImage src='/images/stage/icon_count_on.svg' alt='on' />
+  const offFlag = <IconImage src='/images/stage/icon_count_off.svg' alt='off' />
   return (
     <IconsWrapper>
       <Icons>
-        <Icon>{countFlags}</Icon>
+        {states.map((state, index) => (
+          <Icon key={index}>{state ? onFlag : offFlag}</Icon>
+        ))}
       </Icons>
     </IconsWrapper>
   )
@@ -33,7 +19,6 @@ const IconsWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -20px;
   margin-top: auto;
 `
 const Icons = styled.ul`
@@ -42,4 +27,11 @@ const Icons = styled.ul`
   justify-content: center;
   align-items: center;
 `
-const Icon = styled.li``
+const Icon = styled.li`
+  margin-top: -2px;
+`
+const IconImage = styled.img`
+  transform: rotate(-45deg);
+  width: 40px;
+  height: 40px;
+`

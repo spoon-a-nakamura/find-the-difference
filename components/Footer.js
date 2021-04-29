@@ -25,7 +25,7 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   background: url(/images/common/footer_bg.svg) center 10px / cover repeat-x;
-  z-index: 100;
+  z-index: 10;
 `
 const CopyRights = styled.a`
   font-size: 10px;
