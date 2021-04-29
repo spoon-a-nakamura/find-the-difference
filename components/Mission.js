@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import Image from 'next/image'
 import { colors } from '../components/Colors'
 import Container from '../components/Container'
+import { device } from '../components/MediaQuery'
 
 export default function Mission({ categoryName, stageNumber, correctNumber }) {
   return (
@@ -34,6 +34,7 @@ const MissionWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
   height: 100%;
   width: 100%;
 `
@@ -46,9 +47,17 @@ const MissionContents = styled.div`
 const Title = styled.img`
   position: relative;
   top: -4vw;
+  display: block;
+  margin: auto;
 `
 const MissionIcon = styled.img`
   width: 70px;
+  display: block;
+  margin: auto;
+  @media ${device.mobileS} {
+    margin-top: -10px;
+    width: 50px;
+  }
 `
 const StageName = styled.h2`
   font-size: 16px;
@@ -73,6 +82,9 @@ const MissionBottom = styled.div`
 `
 const CorrectIcon = styled.img`
   margin-right: 10px;
+  @media ${device.mobileS} {
+    width: 50px;
+  }
 `
 const CorrectIconNumber = styled.p`
   font-size: 20px;
