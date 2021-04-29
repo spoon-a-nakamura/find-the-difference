@@ -3,17 +3,12 @@ import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 import Container from '../components/Container'
 import { colors } from '../components/Colors'
+import Character from '../components/Character'
 
 export default function Menu() {
   const eyeAnimate = {
     x: [0, 5, -7, 8, 0],
     y: [10, 14, 13, 11, 10],
-  }
-  const eyeTransition = {
-    repeat: Infinity,
-    repeatDelay: 1,
-    type: 'tween',
-    duration: 10,
   }
   const tagAnimateAnimal = {
     rotate: [0, 5, -2, 10, -3, 0],
@@ -33,10 +28,7 @@ export default function Menu() {
         <TitleSub>スタジオスプーンの</TitleSub>
         <TitleMain>まちがい探し</TitleMain>
       </Title>
-      <Face>
-        <LeftEye animate={eyeAnimate} transition={eyeTransition} />
-        <RightEye animate={eyeAnimate} transition={eyeTransition} />
-      </Face>
+      <Character eyeAnimate={eyeAnimate} />
       <Course>
         <CourseTitleWrapper>
           <CourseTitle>
@@ -89,31 +81,6 @@ const TitleMain = styled.div`
   font-size: 28px;
   margin-top: 5px;
 `
-const Face = styled.div`
-  width: 268px;
-  height: 308px;
-  background: url(/images/common/face@2x.png) center / contain no-repeat;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-  position: relative;
-  margin: 10vw auto 0;
-`
-const LeftEye = styled(motion.div)`
-  width: 40px;
-  height: 40px;
-  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
-  margin-right: 30px;
-  margin-top: 115px;
-  position: relative;
-`
-const RightEye = styled(motion.div)`
-  width: 40px;
-  height: 40px;
-  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
-  margin-top: 115px;
-  position: relative;
-`
 const Course = styled.div`
   background: url(/images/menu/course_bg_head.svg) center top / contain
     no-repeat;
@@ -165,7 +132,7 @@ const CourseTitleGreen = styled.span`
 `
 const Cards = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
   margin-top: -5px;

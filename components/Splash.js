@@ -2,17 +2,12 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
+import Character from '../components/Character'
 
 export default function Splash({ isShow }) {
   const eyeAnimate = {
     x: [0, 5, -10, 10, 0],
     y: [0, 1, 1, -1, 0],
-  }
-  const eyeTransition = {
-    repeat: Infinity,
-    repeatDelay: 1,
-    type: 'tween',
-    duration: 10,
   }
   const startAnimate = {
     scale: [1, 0.95, 1.05, 0.98, 1.01, 0.99, 1],
@@ -30,10 +25,7 @@ export default function Splash({ isShow }) {
           <TitleSub>スタジオスプーンの</TitleSub>
           <TitleMain>まちがい探し</TitleMain>
         </Title>
-        <Face>
-          <LeftEye animate={eyeAnimate} transition={eyeTransition} />
-          <RightEye animate={eyeAnimate} transition={eyeTransition} />
-        </Face>
+        <Character eyeAnimate={eyeAnimate} />
         <Start animate={startAnimate} transition={startTransition}>
           TAP TO START
         </Start>
@@ -65,28 +57,6 @@ const TitleSub = styled.div`
 `
 const TitleMain = styled.div`
   font-size: 40px;
-`
-const Face = styled.div`
-  width: 268px;
-  height: 308px;
-  background: url(/images/common/face@2x.png) center / contain no-repeat;
-  display: flex;
-  justify-content: center;
-`
-const LeftEye = styled(motion.div)`
-  width: 40px;
-  height: 40px;
-  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
-  margin-right: 30px;
-  margin-top: 115px;
-  position: relative;
-`
-const RightEye = styled(motion.div)`
-  width: 40px;
-  height: 40px;
-  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
-  margin-top: 115px;
-  position: relative;
 `
 const Start = styled(motion.div)`
   font-size: 16px;
