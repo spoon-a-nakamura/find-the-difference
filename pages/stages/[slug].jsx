@@ -1,12 +1,12 @@
 import Stage from './Stage'
-import questions from '../../resources/quetion.json'
+import { questions } from '../resources/question'
 
 // jsonの読み込み方は、fsを学んで作る。
 // https://github.com/studio-spoon/studio-spoon.co.jp/blob/main/src/lib/resources/works.ts
 
-const StagePage = ({ question }) => <Stage question={question} />
+const StageSlug = ({ question }) => <Stage question={question} />
 
-export default StagePage
+export default StageSlug
 
 // ちなみにpathsの中身はこのようになっている
 // [{ params: {slug: 'hello'} }, { params: {slug: 'world'} }]

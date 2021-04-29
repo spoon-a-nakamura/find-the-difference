@@ -6,19 +6,15 @@ import StageHeader from './StageHeader'
 import StageModal from './StageModal'
 import CountIcons from './CountIcons'
 import { colors } from './Colors'
-import { questions } from '../resources/question'
 
-const points = questions[0].points
-const stageId = questions[0].stageId
-const stageName = questions[0].stageName
-const stageCategory = questions[0].stageCategory
-console.log(questions)
-console.log(points)
-console.log(stageId)
-console.log(stageName)
-console.log(stageCategory)
+export default function StageContents({ question }) {
+  const points = question.points
+  const stageId = question.stageId
+  const stageName = question.stageName
+  const stageCategory = question.stageCategory
+  const stageImageA = question.stageImageA
+  const stageImageB = question.stageImageB
 
-export default function Stage() {
   // クリア / ゲームオーバー判定のState定義
   const [isCleared, setIsCleared] = useState(false)
   const [isFailed, setIsFailed] = useState(false)
@@ -108,7 +104,7 @@ export default function Stage() {
           }}
         >
           <CanvasA>
-            <Image src='/images/animals/01a@3x.png' width='332' height='249' />
+            <Image src={stageImageA} width='332' height='249' />
             {points.map(({ top, left }, index) => (
               <CorrectPoint
                 key={index}
@@ -120,7 +116,7 @@ export default function Stage() {
             ))}
           </CanvasA>
           <CanvasB>
-            <Image src='/images/animals/01b@3x.png' width='332' height='249' />
+            <Image src={stageImageB} width='332' height='249' />
             {points.map(({ top, left }, index) => (
               <CorrectPoint
                 key={index}
