@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function CountIcons({ states }) {
   const onFlag = (
     <Image
-      src='/images/common/icon-count-on.svg'
+      src='/images/stage/icon-count-on.svg'
       alt='on'
       width={40}
       height={40}
@@ -12,7 +12,7 @@ export default function CountIcons({ states }) {
   )
   const offFlag = (
     <Image
-      src='/images/common/icon-count-off.svg'
+      src='/images/stage/icon-count-off.svg'
       alt='off'
       width={40}
       height={40}

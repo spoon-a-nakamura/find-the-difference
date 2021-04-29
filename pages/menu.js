@@ -75,7 +75,7 @@ export default function Menu() {
 const Title = styled.div`
   color: #fff;
   text-align: center;
-  background: url(/images/common/heading_bg.svg) center top / contain no-repeat;
+  background: url(/images/menu/heading_bg.svg) center top / contain no-repeat;
   width: 100%;
   height: 180px;
   position: absolute;
@@ -115,7 +115,7 @@ const RightEye = styled(motion.div)`
   position: relative;
 `
 const Course = styled.div`
-  background: url(/images/common/course_bg_head.svg) center top / contain
+  background: url(/images/menu/course_bg_head.svg) center top / contain
     no-repeat;
   width: 100%;
   height: auto;
@@ -173,7 +173,7 @@ const Cards = styled.div`
   background: #fff;
 `
 const AnimalCard = styled.div`
-  background: url(/images/common/img_animal@2x.png) center / contain no-repeat;
+  background: url(/images/menu/img_animal@2x.png) center / contain no-repeat;
   width: 163px;
   height: 275px;
   position: relative;
@@ -181,7 +181,7 @@ const AnimalCard = styled.div`
   justify-content: center;
 `
 const AnimalCardTag = styled(motion.div)`
-  background: url(/images/common/tag_animal.svg) center / contain no-repeat;
+  background: url(/images/menu/tag_animal.svg) center / contain no-repeat;
   width: 156px;
   height: 61px;
   position: absolute;
@@ -197,7 +197,7 @@ const AnimalCardCaption = styled.p`
   color: ${colors.orange};
 `
 const MagicCard = styled.div`
-  background: url(/images/common/img_magic@2x.png) center / contain no-repeat;
+  background: url(/images/menu/img_magic@2x.png) center / contain no-repeat;
   width: 163px;
   height: 275px;
   position: relative;
@@ -205,7 +205,7 @@ const MagicCard = styled.div`
   justify-content: center;
 `
 const MagicCardTag = styled(motion.div)`
-  background: url(/images/common/tag_magic.svg) center / contain no-repeat;
+  background: url(/images/menu/tag_magic.svg) center / contain no-repeat;
   width: 156px;
   height: 61px;
   position: absolute;
