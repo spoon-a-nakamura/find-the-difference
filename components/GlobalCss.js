@@ -22,6 +22,12 @@ export default function GlobalCss() {
           font-weight: 400;
           font-style: normal;
           color: #707070;
+          width: 100%;
+          height: 100%;
+        }
+        #__next {
+          width: 100%;
+          height: 100%;
         }
         html {
           visibility: hidden;
