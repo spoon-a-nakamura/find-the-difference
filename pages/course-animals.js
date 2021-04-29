@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 // （案１）中身だけコンポーネントにして、ページはNextのルーティング機能をそのまま使う
 
-export default function StartAnimals() {
+export default function CourseAnimals() {
   return (
     <>
       <Title>ミッション</Title>
