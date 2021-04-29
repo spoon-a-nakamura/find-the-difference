@@ -8,24 +8,34 @@ import CountIcons from './CountIcons'
 import { points } from '../resources/question'
 
 export default function Stage() {
+  // クリア / ゲームオーバー判定のState定義
+  const [isCleared, setIsCleared] = useState(false)
+  const [isFailed, setIsFailed] = useState(false)
+
+  // 正解判定のState定義
   const [checkedState, setCheckedState] = useState(
     [...Array(points.length)].fill(false)
   )
+
+  // 正解した数を数える
   const correctedArray = checkedState.filter((value) => value)
+
+  // 正解した数分、正解アイコンを点灯させるState定義
   const currentIconState = [
     ...correctedArray,
     ...[...Array(checkedState.length - correctedArray.length)].fill(false),
   ]
 
-  const [isCleared, setIsCleared] = useState(false)
-  const [isFailed, setIsFailed] = useState(false)
-
+  // 絵に対しての正解判定
   function showCorrect(index, checkedState) {
+    // １度正解した場所はもう反応させない
     if (!checkedState) {
+      // 正解した箇所を両方の絵に同期する
       setCheckedState((currentState) => {
         const newCheckedState = currentState.map((state, innerIndex) =>
           index === innerIndex ? !state : state
         )
+        // すべて正解した場合の処理
         if (newCheckedState.every((value) => value)) {
           setTimeout(() => {
             setIsCleared(true)
@@ -33,12 +43,14 @@ export default function Stage() {
         }
         return newCheckedState
       })
+      // 正解したらボーナスで10秒アップ（タップすると5秒ひかれる分を加算して15と記載）
       setCountTimer((count) => {
         return count + 15
       })
     }
   }
 
+  // カウントダウンタイマー
   const [countTimer, setCountTimer] = useState(60)
   useEffect(() => {
     const intervalId = setInterval(() => {
