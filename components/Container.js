@@ -15,22 +15,13 @@ export default function Container({ children }) {
 }
 
 const ContainerWrapper = styled.div`
-  position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
   text-align: center;
   background: ${colors.paleGreen} url(/images/common/bg.svg) center / cover;
 `
 
 const Main = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
 `

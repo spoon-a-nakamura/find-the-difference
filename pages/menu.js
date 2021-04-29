@@ -51,7 +51,6 @@ export default function Menu() {
               <AnimalCardCaption>ANIMAL</AnimalCardCaption>
             </AnimalCard>
           </Link>
-
           <Link href='course-magic'>
             <MagicCard>
               <MagicCardTag />
@@ -67,7 +66,7 @@ export default function Menu() {
 const Title = styled.div`
   color: #fff;
   text-align: center;
-  background: url(/images/common/heading_bg.svg) center -70px / cover no-repeat;
+  background: url(/images/common/heading_bg.svg) center top / contain no-repeat;
   width: 100%;
   height: 180px;
   position: absolute;
@@ -75,11 +74,11 @@ const Title = styled.div`
 `
 const TitleSub = styled.div`
   font-size: 16px;
-  margin-top: 17px;
-  margin-bottom: 5px;
+  margin-top: 3vw;
 `
 const TitleMain = styled.div`
   font-size: 28px;
+  margin-top: 5px;
 `
 const Face = styled.div`
   width: 268px;
@@ -87,9 +86,9 @@ const Face = styled.div`
   background: url(/images/common/face@2x.png) center / contain no-repeat;
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 40px;
   z-index: 2;
+  position: relative;
+  margin: 10vw auto 0;
 `
 const LeftEye = styled(motion.div)`
   width: 40px;
@@ -107,19 +106,19 @@ const RightEye = styled(motion.div)`
   position: relative;
 `
 const Course = styled.div`
-  background: url(/images/common/course_bg.svg) center top / cover no-repeat;
+  background: url(/images/common/course_bg_head.svg) center top / contain
+    no-repeat;
   width: 100%;
-  min-height: 300px;
   height: auto;
-  top: -15px;
   position: relative;
   z-index: 1;
+  margin-top: -15vw;
+  padding-top: 40px;
 `
 const CourseTitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
   &::before {
     content: '';
     width: 18px;
@@ -160,7 +159,9 @@ const Cards = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: -5px;
+  padding: 20px 20px 50px;
+  background: #fff;
 `
 const AnimalCard = styled.div`
   background: url(/images/common/img_animal@2x.png) center / contain no-repeat;

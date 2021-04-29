@@ -15,6 +15,8 @@ export default function Footer() {
 }
 
 const FooterWrapper = styled.footer`
+  position: fixed;
+  bottom: 0;
   width: 100%;
   height: 40px;
   padding: 20px;
@@ -23,6 +25,7 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   background: url(/images/common/footer_bg.svg) center 10px / cover repeat-x;
+  z-index: 100;
 `
 const CopyRights = styled.a`
   font-size: 10px;
