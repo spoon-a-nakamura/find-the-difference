@@ -2,6 +2,8 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import Image from 'next/image'
 
+// （案１）中身だけコンポーネントにして、ページはNextのルーティング機能をそのまま使う
+
 export default function StartAnimals() {
   return (
     <>
@@ -14,7 +16,7 @@ export default function StartAnimals() {
           <Image src='/images/common/mission.svg' width={270} height={89} />
         </ImageWrapper>
       </Descriptions>
-      <Link href='animals'>
+      <Link href='stage'>
         <StartButton>START</StartButton>
       </Link>
     </>

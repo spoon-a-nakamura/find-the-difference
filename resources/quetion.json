@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "hello",
+    "name": "endo",
+    "age": 29
+  },
+  {
+    "slug": "world",
+    "name": "akira",
+    "age": 21
+  }
+]

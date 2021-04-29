@@ -4,16 +4,53 @@ import Link from 'next/link'
 import styled from '@emotion/styled'
 import Splash from '../components/Splash'
 
-export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
+const heavyFilePaths = []
+
+async function waitHeavyFileLoading() {
+  if (heavyFilePaths.length === 0) {
+    return
+  }
+
+  const promises = heavyFilePaths.map((path) => {
+    return new Promise((resolve) => {
+      const img = new Image()
+      img.onload = resolve
+      img.onerror = resolve
+      img.src = path
+    })
+  })
+  await Promise.all(promises)
+}
+
+async function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
+
+function useWaitResourcesLoading(callback) {
+  const [isLoaded, setIsLoaded] = useState(false)
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
+    let isSubscribed = true
+    Promise.all([waitHeavyFileLoading(), sleep(1500)]).then(() => {
+      if (isSubscribed) {
+        setIsLoaded(true)
+      }
+    })
+    return () => {
+      isSubscribed = false
+    }
   }, [])
+
+  return isLoaded
+}
+
+export default function Home() {
+  const isLoaded = useWaitResourcesLoading()
+
   return (
     <>
-      <Splash isShow={isLoading} />
+      <Splash isShow={!isLoaded} />
 
       <Title>
         <Image

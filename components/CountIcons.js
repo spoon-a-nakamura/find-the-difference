@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 
-export default function CountIcons() {
+export default function CountIcons({ states }) {
   const onFlag = (
     <Image
       src='/images/common/icon-count-on.svg'
@@ -13,23 +13,20 @@ export default function CountIcons() {
   const offFlag = (
     <Image
       src='/images/common/icon-count-off.svg'
-      alt='on'
+      alt='off'
       width={40}
       height={40}
     />
   )
-  const countFlags = [onFlag, offFlag, offFlag]
+  const countFlags = states.map((state) => (state ? onFlag : offFlag))
   return (
     <IconsWrapper>
       <Icons>
-        {countFlags.map((countFlag) => (
-          <Icon>{countFlag}</Icon>
-        ))}
+        <Icon>{countFlags}</Icon>
       </Icons>
     </IconsWrapper>
   )
 }
-
 const IconsWrapper = styled.div`
   width: 100%;
   padding: 10px;
