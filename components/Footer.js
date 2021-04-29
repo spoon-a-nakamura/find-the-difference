@@ -17,6 +17,7 @@ export default function Footer() {
 const FooterWrapper = styled.footer`
   width: 100%;
   height: 40px;
+  padding: 20px;
   background: #f7f7f7;
   display: flex;
   justify-content: center;

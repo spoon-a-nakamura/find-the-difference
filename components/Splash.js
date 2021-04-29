@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { colors } from '../components/Colors'
 
 export default function Splash({ isShow }) {
   const eyeAnimate = {
@@ -49,7 +50,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #298c6d;
+  background: ${colors.green};
   /* transition: all 0.5s ease-in-out; */
   /* opacity: ${({ isShow }) => (isShow ? 1 : 0)}; */
   /* pointer-events: ${({ isShow }) => (isShow ? 'initial' : 'none')}; */
