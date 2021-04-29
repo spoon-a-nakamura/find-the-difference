@@ -48,7 +48,7 @@ export default function Menu() {
           </CourseTitle>
         </CourseTitleWrapper>
         <Cards>
-          <Link href='course-animals'>
+          <Link href='animal'>
             <AnimalCard>
               <AnimalCardTag
                 animate={tagAnimateAnimal}
@@ -57,7 +57,7 @@ export default function Menu() {
               <AnimalCardCaption>ANIMAL</AnimalCardCaption>
             </AnimalCard>
           </Link>
-          <Link href='course-magic'>
+          <Link href='magic'>
             <MagicCard>
               <MagicCardTag
                 animate={tagAnimateMagic}
