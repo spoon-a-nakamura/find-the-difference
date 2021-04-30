@@ -5,6 +5,7 @@ import StageHeader from './StageHeader'
 import StageModal from './StageModal'
 import CountIcons from './CountIcons'
 import { colors } from './Colors'
+import { useRouter } from 'next/router'
 
 export default function StageContents({ question }) {
   const {
@@ -63,6 +64,8 @@ export default function StageContents({ question }) {
     }
   }
 
+  const [retryCount, setRetryCount] = useState(0)
+
   // カウントダウンタイマー
   const [countTimer, setCountTimer] = useState(60)
   useEffect(() => {
@@ -80,7 +83,24 @@ export default function StageContents({ question }) {
     return () => {
       clearInterval(intervalId)
     }
-  }, [])
+  }, [retryCount])
+
+  const resetAllStates = () => {
+    setIsCleared(false)
+    setIsFailed(false)
+    setCheckedState([...Array(points.length)].fill(false))
+    setCountTimer(60)
+    setRetryCount((val) => val + 1)
+  }
+  const moveNextStage = () => {
+    setIsCleared(false)
+    setTimeout(() => {
+      setIsFailed(false)
+      setCheckedState([...Array(points.length)].fill(false))
+      setCountTimer(60)
+      nextPage()
+    }, 100)
+  }
 
   return (
     <>
@@ -90,6 +110,9 @@ export default function StageContents({ question }) {
         stageId={stageId}
         stageCategory={stageCategory}
         stageSlug={stageSlug}
+        onClickRetry={resetAllStates}
+        onClickNext={moveNextStage}
+        nextId={nextId}
       />
       <StageHeader
         stageId={stageId}

@@ -8,7 +8,8 @@ export default function StageModal({
   isFailed,
   stageId,
   stageCategory,
-  stageSlug,
+  onClickRetry,
+  onClickNext,
 }) {
   const eyeAnimateCleared = {
     x: [0, 5, -7, 8, 0],
@@ -44,9 +45,9 @@ export default function StageModal({
           <Result isCleared={isCleared}>
             {isCleared ? clearText : 'GAME OVER'}
           </Result>
-          <Link href={`/${stageSlug}/${href}`} prefetch={true}>
-            <Button>{isCleared ? '次のステージへ' : 'リトライ'}</Button>
-          </Link>
+          <Button onClick={isCleared ? onClickNext : onClickRetry}>
+            {isCleared ? '次のステージへ' : 'リトライ'}
+          </Button>
           <Link href='/' prefetch={true}>
             <BackHome>HOMEに戻る</BackHome>
           </Link>
