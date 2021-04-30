@@ -20,7 +20,7 @@ export default function Splash({ isShow }) {
   }
   return (
     <Link href='menu'>
-      <Wrapper isShow={isShow}>
+      <Wrapper isShow={isShow} prefetch={true}>
         <Title>
           <TitleSub>スタジオスプーンの</TitleSub>
           <TitleMain>まちがい探し</TitleMain>

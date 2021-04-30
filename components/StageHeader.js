@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function StageHeader({ stageCategory, stageId, stageName }) {
   return (
     <StageHeaderWrapper>
-      <Link href='/'>
+      <Link href='/' prefetch={true}>
         <HomeButton src='/images/stage/button_home.svg' alt='homeに戻る' />
       </Link>
       <StageHeaderTitle>

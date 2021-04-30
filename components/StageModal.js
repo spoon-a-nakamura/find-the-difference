@@ -52,10 +52,10 @@ export default function StageModal({
           <Result isCleared={isCleared}>
             {isCleared ? clearText : 'GAME OVER'}
           </Result>
-          <Link href={`/${stageSlug}/${href}`}>
+          <Link href={`/${stageSlug}/${href}`} prefetch={true}>
             <Button>{isCleared ? '次のステージへ' : 'リトライ'}</Button>
           </Link>
-          <Link href='/'>
+          <Link href='/' prefetch={true}>
             <BackHome>HOMEに戻る</BackHome>
           </Link>
         </ModalContainer>

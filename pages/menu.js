@@ -40,7 +40,7 @@ export default function Menu() {
           </CourseTitle>
         </CourseTitleWrapper>
         <Cards>
-          <Link href='animal'>
+          <Link href='animal' prefetch={true}>
             <AnimalCard>
               <AnimalCardTag
                 animate={tagAnimateAnimal}
@@ -49,7 +49,7 @@ export default function Menu() {
               <AnimalCardCaption>ANIMAL</AnimalCardCaption>
             </AnimalCard>
           </Link>
-          <Link href='magic'>
+          <Link href='magic' prefetch={true}>
             <MagicCard>
               <MagicCardTag
                 animate={tagAnimateMagic}

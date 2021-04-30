@@ -26,7 +26,7 @@ export default function Mission({
             <CorrectIconNumber>× {correctNumber}個</CorrectIconNumber>
           </MissionBottom>
         </MissionContents>
-        <Link href={href}>
+        <Link href={href} prefetch={true}>
           <StartButton>START</StartButton>
         </Link>
       </MissionWrapper>
