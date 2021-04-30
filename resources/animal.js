@@ -1,6 +1,7 @@
 export const questions = [
   {
-    stageId: '01',
+    stageId: 1,
+    nextId: 2,
     stageName: 'いぬ',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -22,7 +23,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '02',
+    stageId: 2,
+    nextId: 3,
     stageName: 'ねこ',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -44,7 +46,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '03',
+    stageId: 3,
+    nextId: 4,
     stageName: 'きりん',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -66,7 +69,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '04',
+    stageId: 4,
+    nextId: 5,
     stageName: 'ぞう',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -88,7 +92,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '05',
+    stageId: 5,
+    nextId: 6,
     stageName: 'コアラ',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -110,7 +115,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '06',
+    stageId: 6,
+    nextId: 7,
     stageName: 'チーター',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -132,7 +138,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '07',
+    stageId: 7,
+    nextId: 8,
     stageName: 'ワニ',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -154,7 +161,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '08',
+    stageId: 8,
+    nextId: 9,
     stageName: 'ねずみ',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -176,7 +184,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '09',
+    stageId: 9,
+    nextId: 10,
     stageName: 'うさぎ',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -198,7 +207,8 @@ export const questions = [
     ],
   },
   {
-    stageId: '10',
+    stageId: 10,
+    nextId: null,
     stageName: 'さる',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -220,3 +230,11 @@ export const questions = [
     ],
   },
 ]
+// const generateQuestions = (input) => {
+//   return input.map((data, length) => ({
+//     ...data,
+//     nextId: data.stageId + 1,
+//     stageImageA: `/images/animal/${data.stageId}a@2x.png`,
+//     stageImageB: `/images/animal/${data.stageId}b@2x.png`,
+//   }))
+// }

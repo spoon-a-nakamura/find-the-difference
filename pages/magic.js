@@ -2,9 +2,9 @@ import Mission from '../components/Mission'
 
 const courseValues = {
   categoryName: 'まほう',
-  stageNumber: '01',
+  stageNumber: '1',
   correctNumber: '4',
-  href: 'magic/01',
+  href: 'magic/1',
 }
 
 export default function CourseAnimals() {
