@@ -6,7 +6,7 @@ import { device } from '../components/MediaQuery'
 
 export default function Mission({
   categoryName,
-  stageNumber,
+  // stageNumber,
   correctNumber,
   href,
 }) {
@@ -16,9 +16,7 @@ export default function Mission({
         <MissionContents>
           <Title src='/images/mission/mission_heading.svg' alt='ミッション' />
           <MissionIcon src='/images/mission/mission_symbol.svg' alt='' />
-          <StageName>
-            {categoryName}ステージ {stageNumber}
-          </StageName>
+          <StageName>{categoryName}ステージ</StageName>
           <CorrectNumber>{correctNumber}個</CorrectNumber>
           <Span>の違うところを探してね。</Span>
           <MissionBottom>
@@ -39,7 +37,6 @@ const MissionWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
   height: 100%;
   width: 100%;
 `
