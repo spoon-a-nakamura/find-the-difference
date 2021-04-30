@@ -6,6 +6,7 @@ import StageModal from './StageModal'
 import CountIcons from './CountIcons'
 import { colors } from './Colors'
 import { useRouter } from 'next/router'
+import ProgressBar from '../components/ProgressBar'
 
 export default function StageContents({ question }) {
   const {
@@ -18,9 +19,6 @@ export default function StageContents({ question }) {
     stageImageB,
     nextId,
   } = question
-
-  const router = useRouter()
-  const nextPage = () => router.push(`${nextId}`)
 
   // クリア / ゲームオーバー判定のState定義
   const [isCleared, setIsCleared] = useState(false)
@@ -64,10 +62,12 @@ export default function StageContents({ question }) {
     }
   }
 
+  // リトライの為のState定義
   const [retryCount, setRetryCount] = useState(0)
 
   // カウントダウンタイマー
-  const [countTimer, setCountTimer] = useState(60)
+  const defaultTimer = 100
+  const [countTimer, setCountTimer] = useState(defaultTimer)
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCountTimer((count) => {
@@ -85,19 +85,26 @@ export default function StageContents({ question }) {
     }
   }, [retryCount])
 
+  // リトライする為の関数
   const resetAllStates = () => {
     setIsCleared(false)
     setIsFailed(false)
     setCheckedState([...Array(points.length)].fill(false))
-    setCountTimer(60)
+    setCountTimer(defaultTimer)
     setRetryCount((val) => val + 1)
   }
+
+  // 次ページに進むRouter
+  const router = useRouter()
+  const nextPage = () => router.push(`${nextId}`)
+
+  // 次ページに進む関数
   const moveNextStage = () => {
     setIsCleared(false)
     setTimeout(() => {
       setIsFailed(false)
       setCheckedState([...Array(points.length)].fill(false))
-      setCountTimer(60)
+      setCountTimer(defaultTimer)
       nextPage()
     }, 100)
   }
@@ -114,77 +121,81 @@ export default function StageContents({ question }) {
         onClickNext={moveNextStage}
         nextId={nextId}
       />
-      <StageHeader
-        stageId={stageId}
-        stageName={stageName}
-        stageCategory={stageCategory}
-      />
-      <StageWrapper>
-        <StageTimer>残り時間：{countTimer}</StageTimer>
-        <CanvasWrapper
-          onClick={() => {
-            setCountTimer((count) => {
-              if (count < 5) {
-                setIsFailed(true)
-                return (count = 0)
-              } else {
-                return count - 5
-              }
-            })
-          }}
-        >
-          <CanvasA>
-            <Art src={stageImageA} />
-            {points.map(({ top, left }, index) => (
-              <CorrectPoint
-                key={index}
-                top={top}
-                left={left}
-                clicked={checkedState[index]}
-                onClick={() => showCorrect(index, checkedState[index])}
-              />
-            ))}
-          </CanvasA>
-          <CanvasB>
-            <Art src={stageImageB} />
-            {points.map(({ top, left }, index) => (
-              <CorrectPoint
-                key={index}
-                top={top}
-                left={left}
-                clicked={checkedState[index]}
-                onClick={() => showCorrect(index, checkedState[index])}
-              />
-            ))}
-          </CanvasB>
-        </CanvasWrapper>
-        <CountIcons states={currentIconState} />
-      </StageWrapper>
+      <StageContainer>
+        <StageHeader
+          stageId={stageId}
+          stageName={stageName}
+          stageCategory={stageCategory}
+          countTimer={countTimer}
+        />
+        <StageWrapper>
+          <CanvasWrapper
+            onClick={() => {
+              setCountTimer((count) => {
+                if (count < 5) {
+                  setIsFailed(true)
+                  return (count = 0)
+                } else {
+                  return count - 5
+                }
+              })
+            }}
+          >
+            <CanvasA>
+              <Art src={stageImageA} />
+              {points.map(({ top, left }, index) => (
+                <CorrectPoint
+                  key={index}
+                  top={top}
+                  left={left}
+                  clicked={checkedState[index]}
+                  onClick={() => showCorrect(index, checkedState[index])}
+                />
+              ))}
+            </CanvasA>
+            <CanvasB>
+              <Art src={stageImageB} />
+              {points.map(({ top, left }, index) => (
+                <CorrectPoint
+                  key={index}
+                  top={top}
+                  left={left}
+                  clicked={checkedState[index]}
+                  onClick={() => showCorrect(index, checkedState[index])}
+                />
+              ))}
+            </CanvasB>
+          </CanvasWrapper>
+          <ProgressBar countTimer={countTimer} />
+          <CountIcons states={currentIconState} />
+        </StageWrapper>
+      </StageContainer>
     </>
   )
 }
+const StageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 10px);
+`
 const StageWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100% - 90px);
-`
-const StageTimer = styled.p`
-  font-size: 14px;
-  background: #fff;
-  padding: 8px 20px;
-  border-radius: 100px;
-  color: ${colors.black};
+  height: 100%;
 `
 const CanvasWrapper = styled.div`
   position: relative;
-  width: 80%;
+  width: 85%;
   background: #fff;
   padding: 10px;
   border-radius: 10px;
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
 `
 const CanvasA = styled.div`
   position: relative;

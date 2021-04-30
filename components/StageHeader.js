@@ -1,7 +1,13 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { colors } from '../components/Colors'
 
-export default function StageHeader({ stageCategory, stageId, stageName }) {
+export default function StageHeader({
+  stageCategory,
+  stageId,
+  stageName,
+  countTimer,
+}) {
   return (
     <StageHeaderWrapper>
       <Link href='/' prefetch={true}>
@@ -13,6 +19,7 @@ export default function StageHeader({ stageCategory, stageId, stageName }) {
         </StageTitle>
         <StageName>{stageName}</StageName>
       </StageHeaderTitle>
+      <StageTimer>{countTimer}</StageTimer>
     </StageHeaderWrapper>
   )
 }
@@ -20,19 +27,16 @@ export default function StageHeader({ stageCategory, stageId, stageName }) {
 const StageHeaderWrapper = styled.header`
   width: 100%;
   height: 77px;
-  padding: 20px;
+  padding: 0 18px 15px 25px;
   font-size: 12px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: auto;
   background: url(/images/stage/stage_heading.svg) center / cover no-repeat;
-  position: relative;
+  margin-bottom: auto;
 `
 const HomeButton = styled.img`
-  margin-right: auto;
   position: relative;
-  top: -7px;
 `
 const StageHeaderTitle = styled.h1`
   display: flex;
@@ -43,7 +47,6 @@ const StageHeaderTitle = styled.h1`
   color: #fff;
   width: 100%;
   position: relative;
-  top: -10px;
 `
 const StageTitle = styled.span`
   font-size: 12px;
@@ -52,4 +55,16 @@ const StageTitle = styled.span`
 const StageName = styled.span`
   margin-top: 5px;
   font-size: 20px;
+`
+const StageTimer = styled.p`
+  font-size: 14px;
+  background: #fff;
+  width: 52px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  color: ${colors.black};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
