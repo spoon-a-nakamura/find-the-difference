@@ -7,13 +7,19 @@ import CountIcons from './CountIcons'
 import { colors } from './Colors'
 
 export default function StageContents({ question }) {
-  const points = question.points
-  const stageId = question.stageId
-  const stageName = question.stageName
-  const stageCategory = question.stageCategory
-  const stageSlug = question.stageSlug
-  const stageImageA = question.stageImageA
-  const stageImageB = question.stageImageB
+  const {
+    points,
+    stageId,
+    stageName,
+    stageCategory,
+    stageSlug,
+    stageImageA,
+    stageImageB,
+    nextId,
+  } = question
+
+  const router = useRouter()
+  const nextPage = () => router.push(`${nextId}`)
 
   // クリア / ゲームオーバー判定のState定義
   const [isCleared, setIsCleared] = useState(false)
