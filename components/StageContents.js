@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import Image from 'next/image'
 import StageHeader from './StageHeader'
 import StageModal from './StageModal'
 import CountIcons from './CountIcons'
@@ -106,7 +105,7 @@ export default function StageContents({ question }) {
           }}
         >
           <CanvasA>
-            <Image src={stageImageA} width='332' height='249' />
+            <Art src={stageImageA} />
             {points.map(({ top, left }, index) => (
               <CorrectPoint
                 key={index}
@@ -118,7 +117,7 @@ export default function StageContents({ question }) {
             ))}
           </CanvasA>
           <CanvasB>
-            <Image src={stageImageB} width='332' height='249' />
+            <Art src={stageImageB} />
             {points.map(({ top, left }, index) => (
               <CorrectPoint
                 key={index}
@@ -163,6 +162,10 @@ const CanvasA = styled.div`
 `
 const CanvasB = styled.div`
   position: relative;
+`
+const Art = styled.img`
+  width: 100%;
+  height: 100%;
 `
 const CorrectPoint = styled.div`
   position: absolute;
