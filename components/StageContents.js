@@ -63,7 +63,7 @@ export default function StageContents({ question }) {
   }
 
   // リトライの為のState定義
-  const [retryCount, setRetryCount] = useState(0)
+  const [refresh, setRefresh] = useState(0)
 
   // カウントダウンタイマー
   const defaultTimer = 100
@@ -83,7 +83,7 @@ export default function StageContents({ question }) {
     return () => {
       clearInterval(intervalId)
     }
-  }, [retryCount])
+  }, [refresh])
 
   // リトライする為の関数
   const resetAllStates = () => {
@@ -91,7 +91,7 @@ export default function StageContents({ question }) {
     setIsFailed(false)
     setCheckedState([...Array(points.length)].fill(false))
     setCountTimer(defaultTimer)
-    setRetryCount((val) => val + 1)
+    setRefresh((val) => val + 1)
   }
 
   // 次ページに進むRouter
@@ -105,6 +105,7 @@ export default function StageContents({ question }) {
       setIsFailed(false)
       setCheckedState([...Array(points.length)].fill(false))
       setCountTimer(defaultTimer)
+      setRefresh((val) => val + 1)
       nextPage()
     }, 100)
   }
