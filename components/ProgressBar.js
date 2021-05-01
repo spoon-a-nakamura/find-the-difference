@@ -1,17 +1,14 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
-import { useGameLevelContext } from '../components/GameLevelContext'
-
-const defaultTime = useGameLevelContext.gameLevel
 
 export default function ProgressBar({ countTimer }) {
-  // プログレスの進捗率
-  const percentsOffset = 100 - (countTimer / defaultTime) * 100
-
   // カウントダウンタイマーの状況
-  const isFirstHalf = 60 > percentsOffset
-  const isClimax = 85 < percentsOffset
+  const isFirstHalf = countTimer > 50
+  const isClimax = 20 < countTimer
+
+  // プログレスの進捗率
+  const percentsOffset = `-${countTimer}%`
 
   return (
     <>
@@ -20,10 +17,10 @@ export default function ProgressBar({ countTimer }) {
           initial={false}
           transition={{ easings: 'ease' }}
           animate={{
-            width: `${percentsOffset}%`,
+            x: percentsOffset,
           }}
           style={{
-            background: isClimax ? colors.red : colors.orange,
+            background: isClimax ? colors.orange : colors.red,
             opacity: isFirstHalf ? 0.4 : 1,
           }}
         />

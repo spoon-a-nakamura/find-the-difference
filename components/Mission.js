@@ -11,10 +11,12 @@ import {
 
 const gameLevelModesArray = Object.values(gameLevelModes)
 
-export default function Mission({ categoryName, correctNumber, href }) {
-  const { gameLevel, setGameLevel } = useGameLevelContext()
-  console.log(`ゲームレベル：${gameLevel}`)
-
+export default function Mission({
+  categoryName,
+  // stageNumber,
+  correctNumber,
+  href,
+}) {
   return (
     <Container>
       <MissionWrapper>
