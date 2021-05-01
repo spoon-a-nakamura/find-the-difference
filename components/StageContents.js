@@ -9,7 +9,6 @@ import { colors } from './Colors'
 import { useRouter } from 'next/router'
 import ProgressBar from '../components/ProgressBar'
 import Nice from '../components/Nice'
-import { defaultTime } from '../components/DefaultTime'
 
 export default function StageContents({ question }) {
   const {
@@ -77,7 +76,8 @@ export default function StageContents({ question }) {
   const [refresh, setRefresh] = useState(0)
 
   // カウントダウンタイマー
-  const [countTimer, setCountTimer] = useState(defaultTime)
+  const defaultTimer = 100
+  const [countTimer, setCountTimer] = useState(defaultTimer)
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCountTimer((count) => {
@@ -100,7 +100,7 @@ export default function StageContents({ question }) {
     setIsCleared(false)
     setIsFailed(false)
     setCheckedState([...Array(points.length)].fill(false))
-    setCountTimer(defaultTime)
+    setCountTimer(defaultTimer)
     setRefresh((val) => val + 1)
   }
 
@@ -114,7 +114,7 @@ export default function StageContents({ question }) {
     setTimeout(() => {
       setIsFailed(false)
       setCheckedState([...Array(points.length)].fill(false))
-      setCountTimer(defaultTime)
+      setCountTimer(defaultTimer)
       setRefresh((val) => val + 1)
       nextPage()
     }, 100)
