@@ -1,5 +1,5 @@
+import { useState } from 'react'
 import styled from '@emotion/styled'
-import Link from 'next/link'
 import { colors } from '../components/Colors'
 
 export default function StageHeader({
@@ -7,12 +7,15 @@ export default function StageHeader({
   stageId,
   stageName,
   countTimer,
+  onClickShowModal,
 }) {
   return (
     <StageHeaderWrapper>
-      <Link href='/' prefetch={true}>
-        <HomeButton src='/images/stage/button_home.svg' alt='homeに戻る' />
-      </Link>
+      <HomeButton
+        onClick={onClickShowModal}
+        src='/images/stage/button_home.svg'
+        alt='homeに戻る'
+      />
       <StageHeaderTitle>
         <StageTitle>
           {stageCategory}ステージ {stageId}
@@ -44,7 +47,7 @@ const StageHeaderTitle = styled.h1`
   align-items: center;
   flex-direction: column;
   text-align: center;
-  color: #fff;
+  color: ${colors.white};
   width: 100%;
   position: relative;
 `
@@ -58,7 +61,7 @@ const StageName = styled.span`
 `
 const StageTimer = styled.p`
   font-size: 14px;
-  background: #fff;
+  background: ${colors.white};
   width: 52px;
   height: 40px;
   box-sizing: border-box;

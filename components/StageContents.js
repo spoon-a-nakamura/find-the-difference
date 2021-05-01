@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import StageHeader from './StageHeader'
 import StageModal from './StageModal'
+import BackToHome from './BackToHome'
 import CountIcons from './CountIcons'
 import { colors } from './Colors'
 import { useRouter } from 'next/router'
@@ -110,24 +111,32 @@ export default function StageContents({ question }) {
     }, 100)
   }
 
+  const [isShowModal, setIsShowModal] = useState(false)
+  const showModal = () => {
+    setIsShowModal(true)
+  }
+  const hideModal = () => {
+    setIsShowModal(false)
+  }
   return (
     <>
+      <BackToHome onClickBackToHome={isShowModal} onClickCancel={hideModal} />
       <StageModal
         isCleared={isCleared}
         isFailed={isFailed}
         stageId={stageId}
         stageCategory={stageCategory}
-        stageSlug={stageSlug}
         onClickRetry={resetAllStates}
         onClickNext={moveNextStage}
-        nextId={nextId}
+        onClickShowModal={showModal}
       />
       <StageContainer>
         <StageHeader
           stageId={stageId}
-          stageName={stageName}
           stageCategory={stageCategory}
+          stageName={stageName}
           countTimer={countTimer}
+          onClickShowModal={showModal}
         />
         <StageWrapper>
           <CanvasWrapper
@@ -174,6 +183,7 @@ export default function StageContents({ question }) {
     </>
   )
 }
+
 const StageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -193,7 +203,7 @@ const StageWrapper = styled.div`
 const CanvasWrapper = styled.div`
   position: relative;
   width: 85%;
-  background: #fff;
+  background: ${colors.white};
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
