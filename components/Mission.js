@@ -4,12 +4,7 @@ import { colors } from '../components/Colors'
 import Container from '../components/Container'
 import { device } from '../components/MediaQuery'
 
-export default function Mission({
-  categoryName,
-  // stageNumber,
-  correctNumber,
-  href,
-}) {
+export default function Mission({ categoryName, correctNumber, href }) {
   return (
     <Container>
       <MissionWrapper>
