@@ -8,6 +8,7 @@ import CountIcons from './CountIcons'
 import { colors } from './Colors'
 import { useRouter } from 'next/router'
 import ProgressBar from '../components/ProgressBar'
+import Nice from '../components/Nice'
 
 export default function StageContents({ question }) {
   const {
@@ -38,6 +39,9 @@ export default function StageContents({ question }) {
     ...[...Array(checkedState.length - correctedArray.length)].fill(false),
   ]
 
+  // 正解した時にほめるState定義
+  const [isNice, setIsNice] = useState(false)
+
   // 絵に対しての正解判定
   function showCorrect(index, checkedState) {
     // １度正解した場所はもう反応させない
@@ -51,7 +55,7 @@ export default function StageContents({ question }) {
         if (newCheckedState.every((value) => value)) {
           setTimeout(() => {
             setIsCleared(true)
-          }, 100)
+          }, 1500)
         }
         return newCheckedState
       })
@@ -59,6 +63,12 @@ export default function StageContents({ question }) {
       setCountTimer((count) => {
         return count + 15
       })
+
+      // 正解したらほめる関数
+      setIsNice(true)
+      setTimeout(() => {
+        setIsNice(false)
+      }, 1500)
     }
   }
 
@@ -152,6 +162,7 @@ export default function StageContents({ question }) {
         />
         <StageWrapper>
           <CanvasWrapper onClick={penalty}>
+            <Nice isNice={isNice} />
             <CanvasA>
               <Art src={stageImageA} />
               {points.map(({ top, left }, index) => (
@@ -208,6 +219,7 @@ const CanvasWrapper = styled.div`
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 `
 const CanvasA = styled.div`
   position: relative;
