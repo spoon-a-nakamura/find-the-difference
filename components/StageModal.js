@@ -10,6 +10,7 @@ export default function StageModal({
   stageCategory,
   onClickRetry,
   onClickNext,
+  onClickShowModal,
 }) {
   const eyeAnimateCleared = {
     x: [0, 5, -7, 8, 0],
@@ -29,7 +30,6 @@ export default function StageModal({
       <ClearText6>!</ClearText6>
     </ClearText>
   )
-
   return (
     <>
       <Modal isOpen={isCleared || isFailed}>
@@ -132,7 +132,7 @@ const ClearText6 = styled.span`
 const Button = styled.a`
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: ${colors.white};
   padding: 15px 30px;
   background: ${colors.green};
   border-radius: 100px;

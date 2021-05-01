@@ -65,7 +65,7 @@ export default function Menu() {
 }
 
 const Title = styled.div`
-  color: #fff;
+  color: ${colors.white};
   text-align: center;
   background: url(/images/menu/heading_bg.svg) center top / contain no-repeat;
   width: 100%;
@@ -137,7 +137,7 @@ const Cards = styled.div`
   gap: 20px;
   margin-top: -5px;
   padding: 20px 20px 50px;
-  background: #fff;
+  background: ${colors.white};
 `
 const AnimalCard = styled.div`
   background: url(/images/menu/img_animal@2x.png) center / contain no-repeat;

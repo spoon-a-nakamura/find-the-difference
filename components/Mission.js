@@ -96,7 +96,7 @@ const StartButton = styled.div`
   width: 60%;
   margin-top: 20px;
   background: ${colors.orange};
-  color: #fff;
+  color: ${colors.white};
   font-weight: bold;
   font-size: 20px;
   border-radius: 100px;

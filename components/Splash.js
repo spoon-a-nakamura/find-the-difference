@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   /* pointer-events: ${({ isShow }) => (isShow ? 'initial' : 'none')}; */
 `
 const Title = styled.div`
-  color: #fff;
+  color: ${colors.white};
   text-align: center;
 `
 const TitleSub = styled.div`
@@ -60,7 +60,7 @@ const TitleMain = styled.div`
 `
 const Start = styled(motion.div)`
   font-size: 16px;
-  color: #fff;
+  color: ${colors.white};
   letter-spacing: 1px;
   margin-bottom: 50px;
   font-weight: bold;

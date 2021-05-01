@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { colors } from '../components/Colors'
 
 export default function Footer() {
   return (
@@ -20,7 +21,6 @@ const FooterWrapper = styled.footer`
   width: 100%;
   height: 40px;
   padding: 20px;
-  background: #f7f7f7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,6 +29,6 @@ const FooterWrapper = styled.footer`
 `
 const CopyRights = styled.a`
   font-size: 10px;
-  color: #fff;
+  color: ${colors.white};
   margin-top: 14px;
 `
