@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
-import { defaultTime } from '../components/DefaultTime'
+import { useGameLevelContext } from '../components/GameLevelContext'
+
+const defaultTime = useGameLevelContext.gameLevel
 
 export default function ProgressBar({ countTimer }) {
   // プログレスの進捗率
