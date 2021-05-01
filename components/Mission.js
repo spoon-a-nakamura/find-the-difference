@@ -94,7 +94,6 @@ const CorrectIconNumber = styled.p`
 const StartButton = styled.div`
   padding: 20px;
   width: 60%;
-  margin-top: 20px;
   background: ${colors.orange};
   color: ${colors.white};
   font-weight: bold;
