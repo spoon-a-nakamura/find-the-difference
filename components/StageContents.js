@@ -15,7 +15,6 @@ export default function StageContents({ question }) {
     stageId,
     stageName,
     stageCategory,
-    stageSlug,
     stageImageA,
     stageImageB,
     nextId,
@@ -111,12 +110,25 @@ export default function StageContents({ question }) {
     }, 100)
   }
 
+  // Homeに戻るモーダルを出し分けするStateと関数
   const [isShowModal, setIsShowModal] = useState(false)
   const showModal = () => {
     setIsShowModal(true)
   }
   const hideModal = () => {
     setIsShowModal(false)
+  }
+
+  // 間違えたら５秒減るペナルティ関数
+  const penalty = () => {
+    setCountTimer((count) => {
+      if (count < 5) {
+        setIsFailed(true)
+        return (count = 0)
+      } else {
+        return count - 5
+      }
+    })
   }
   return (
     <>
@@ -139,18 +151,7 @@ export default function StageContents({ question }) {
           onClickShowModal={showModal}
         />
         <StageWrapper>
-          <CanvasWrapper
-            onClick={() => {
-              setCountTimer((count) => {
-                if (count < 5) {
-                  setIsFailed(true)
-                  return (count = 0)
-                } else {
-                  return count - 5
-                }
-              })
-            }}
-          >
+          <CanvasWrapper onClick={penalty}>
             <CanvasA>
               <Art src={stageImageA} />
               {points.map(({ top, left }, index) => (
