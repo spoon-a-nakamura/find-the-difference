@@ -4,12 +4,7 @@ import { colors } from '../components/Colors'
 import Container from '../components/Container'
 import { device } from '../components/MediaQuery'
 
-export default function Mission({
-  categoryName,
-  // stageNumber,
-  correctNumber,
-  href,
-}) {
+export default function Mission({ categoryName, correctNumber, href }) {
   return (
     <Container>
       <MissionWrapper>
@@ -94,6 +89,7 @@ const CorrectIconNumber = styled.p`
 const StartButton = styled.div`
   padding: 20px;
   width: 60%;
+  margin-top: 20px;
   background: ${colors.orange};
   color: ${colors.white};
   font-weight: bold;

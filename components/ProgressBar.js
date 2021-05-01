@@ -1,14 +1,15 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
+import { defaultTime } from '../components/DefaultTime'
 
 export default function ProgressBar({ countTimer }) {
-  // カウントダウンタイマーの状況
-  const isFirstHalf = countTimer > 50
-  const isClimax = 20 < countTimer
-
   // プログレスの進捗率
-  const percentsOffset = `-${countTimer}%`
+  const percentsOffset = 100 - (countTimer / defaultTime) * 100
+
+  // カウントダウンタイマーの状況
+  const isFirstHalf = 60 > percentsOffset
+  const isClimax = 85 < percentsOffset
 
   return (
     <>
@@ -17,10 +18,10 @@ export default function ProgressBar({ countTimer }) {
           initial={false}
           transition={{ easings: 'ease' }}
           animate={{
-            x: percentsOffset,
+            width: `${percentsOffset}%`,
           }}
           style={{
-            background: isClimax ? colors.orange : colors.red,
+            background: isClimax ? colors.red : colors.orange,
             opacity: isFirstHalf ? 0.4 : 1,
           }}
         />
