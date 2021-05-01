@@ -53,6 +53,8 @@ const ProgressWrapper = styled(motion.div)`
 const Progress = styled(motion.div)`
   width: 100%;
   height: 100%;
-  left: 0;
+  border-radius: 20px;
   position: absolute;
+  left: 0;
+  transition: all ease 0.3s;
 `

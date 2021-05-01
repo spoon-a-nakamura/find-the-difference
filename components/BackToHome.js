@@ -70,13 +70,13 @@ const Title = styled.p`
 const ButtonWrapper = styled.div`
   margin-top: 30px;
   display: flex;
-  gap: 10px;
 `
 const CancelButton = styled.div`
   font-size: 14px;
   padding: 15px;
   width: 100px;
   border-radius: 100px;
+  margin-right: 15px;
   color: ${colors.green};
   background: ${colors.paleGreen};
 `
