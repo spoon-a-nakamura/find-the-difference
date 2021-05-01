@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import StageHeader from './StageHeader'
@@ -9,8 +9,10 @@ import { colors } from './Colors'
 import { useRouter } from 'next/router'
 import ProgressBar from '../components/ProgressBar'
 import Nice from '../components/Nice'
-import { defaultTime } from '../components/DefaultTime'
+import { useGameLevelContext } from '../components/GameLevelContext'
 
+const defaultTime = useGameLevelContext.gameLevel
+console.log(defaultTime)
 export default function StageContents({ question }) {
   const {
     points,

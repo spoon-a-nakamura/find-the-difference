@@ -4,7 +4,7 @@ import { adobeLoader } from '../fonts/adobeLoader'
 import { AnimateSharedLayout } from 'framer-motion'
 import GlobalCss from '../components/GlobalCss'
 
-export default function App({ Component, pageProps, router }) {
+export default function App({ Component, pageProps }) {
   useEffect(() => {
     if (process.browser) adobeLoader(document)
   }, [])

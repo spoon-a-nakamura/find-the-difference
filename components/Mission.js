@@ -1,10 +1,20 @@
+import { useState, useContext } from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import { colors } from '../components/Colors'
 import Container from '../components/Container'
 import { device } from '../components/MediaQuery'
+import {
+  useGameLevelContext,
+  gameLevelModes,
+} from '../components/GameLevelContext'
+
+const gameLevelModesArray = Object.values(gameLevelModes)
 
 export default function Mission({ categoryName, correctNumber, href }) {
+  const { gameLevel, setGameLevel } = useGameLevelContext()
+  console.log(`ゲームレベル：${gameLevel}`)
+
   return (
     <Container>
       <MissionWrapper>
@@ -19,6 +29,18 @@ export default function Mission({ categoryName, correctNumber, href }) {
             <CorrectIconNumber>× {correctNumber}個</CorrectIconNumber>
           </MissionBottom>
         </MissionContents>
+        <SetTimerWrapper>
+          <SetTimer
+            defaultValue={gameLevel}
+            onChange={(e) => setGameLevel(e.target.value)}
+          >
+            {gameLevelModesArray.map(({ value, label }, index) => (
+              <SetTimerValue key={index} value={value}>
+                {label}
+              </SetTimerValue>
+            ))}
+          </SetTimer>
+        </SetTimerWrapper>
         <Link href={href} prefetch={true}>
           <StartButton>START</StartButton>
         </Link>
@@ -89,10 +111,41 @@ const CorrectIconNumber = styled.p`
 const StartButton = styled.div`
   padding: 20px;
   width: 60%;
-  margin-top: 20px;
   background: ${colors.orange};
   color: ${colors.white};
   font-weight: bold;
   font-size: 20px;
   border-radius: 100px;
 `
+const SetTimerWrapper = styled.div`
+  border-radius: 10px;
+  margin: 15px auto;
+  background: ${colors.white};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  &::before {
+    content: '';
+    background: url(/images/mission/timer.svg) center / contain no-repeat;
+    position: absolute;
+    display: block;
+    left: 7px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+  }
+`
+const SetTimer = styled.select`
+  padding: 0 13px 0 18px;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  top: 2px;
+`
+const SetTimerValue = styled.option``

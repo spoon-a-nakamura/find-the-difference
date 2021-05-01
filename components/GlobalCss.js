@@ -25,6 +25,14 @@ export default function GlobalCss() {
           width: 100%;
           height: 100%;
         }
+        select {
+          font-family: vdl-megamaru, -apple-system, BlinkMacSystemFont, Segoe UI,
+            Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+            Helvetica Neue, sans-serif;
+          appearance: none;
+          line-height: normal;
+          position: relative;
+        }
         #__next {
           width: 100%;
           height: 100%;
