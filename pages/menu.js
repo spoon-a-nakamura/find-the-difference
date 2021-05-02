@@ -76,6 +76,7 @@ const Title = styled.div`
   height: 180px;
   position: absolute;
   top: 0px;
+  transition: all ease 0.5s;
 `
 const TitleSub = styled.div`
   font-size: 16px;

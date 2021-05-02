@@ -1,5 +1,5 @@
 import Splash from '../components/Splash'
 
 export default function Home() {
-  return <Splash isShow={true} />
+  return <Splash />
 }

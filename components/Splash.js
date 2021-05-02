@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
 import Character from '../components/Character'
 
-export default function Splash({ isShow }) {
+export default function Splash() {
   const eyeAnimate = {
     x: [0, 5, -10, 10, 0],
     y: [0, 1, 1, -1, 0],
@@ -19,8 +19,8 @@ export default function Splash({ isShow }) {
     duration: 2,
   }
   return (
-    <Link href='menu'>
-      <Wrapper isShow={isShow} prefetch={true}>
+    <Link href='menu' prefetch={true}>
+      <Wrapper>
         <Title>
           <TitleSub>スタジオスプーンの</TitleSub>
           <TitleMain>まちがい探し</TitleMain>
@@ -43,9 +43,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background: ${colors.green};
-  /* transition: all 0.5s ease-in-out; */
-  /* opacity: ${({ isShow }) => (isShow ? 1 : 0)}; */
-  /* pointer-events: ${({ isShow }) => (isShow ? 'initial' : 'none')}; */
+  transition: all 0.5s ease-in-out;
 `
 const Title = styled.div`
   color: ${colors.white};
