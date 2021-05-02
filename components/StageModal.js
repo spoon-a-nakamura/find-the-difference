@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { colors } from '../components/Colors'
 import Character from '../components/Character'
+import Confetti from 'react-confetti'
 
 export default function StageModal({
   isCleared,
@@ -33,6 +34,30 @@ export default function StageModal({
   return (
     <>
       <Modal isOpen={isCleared || isFailed}>
+        {isCleared && (
+          <Confetti
+            width={375}
+            height={667}
+            recycle={true}
+            numberOfPieces={40}
+            colors={[
+              colors.paleGreen,
+              colors.green,
+              colors.orange,
+              colors.yellow,
+              colors.purple,
+              colors.lightPurple,
+            ]}
+            style={{
+              width: '100%',
+              height: 'auto',
+              position: 'fixed',
+              top: 0,
+              left: 0,
+            }}
+          />
+        )}
+
         <CharacterWrapper isOpen={isCleared || isFailed}>
           <Character
             eyeAnimate={isCleared ? eyeAnimateCleared : eyeAnimateFailed}
