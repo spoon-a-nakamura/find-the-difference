@@ -15,11 +15,12 @@ export default function StageContents({ question }) {
   const {
     points,
     stageId,
+    nextId,
     stageName,
     stageCategory,
+    stageSlug,
     stageImageA,
     stageImageB,
-    nextId,
   } = question
 
   // クリア / ゲームオーバー判定のState定義
@@ -142,7 +143,11 @@ export default function StageContents({ question }) {
   }
   return (
     <>
-      <BackToHome onClickBackToHome={isShowModal} onClickCancel={hideModal} />
+      <BackToHome
+        onClickBackToHome={isShowModal}
+        onClickCancel={hideModal}
+        stageSlug={stageSlug}
+      />
       <StageModal
         isCleared={isCleared}
         isFailed={isFailed}
@@ -151,6 +156,7 @@ export default function StageContents({ question }) {
         onClickRetry={resetAllStates}
         onClickNext={moveNextStage}
         onClickShowModal={showModal}
+        stageSlug={stageSlug}
       />
       <StageContainer>
         <StageHeader
@@ -159,6 +165,7 @@ export default function StageContents({ question }) {
           stageName={stageName}
           countTimer={countTimer}
           onClickShowModal={showModal}
+          stageSlug={stageSlug}
         />
         <StageWrapper>
           <CanvasWrapper onClick={penalty}>
@@ -170,6 +177,7 @@ export default function StageContents({ question }) {
                   key={index}
                   top={top}
                   left={left}
+                  stageSlug={stageSlug}
                   clicked={checkedState[index]}
                   onClick={() => showCorrect(index, checkedState[index])}
                 />
@@ -182,14 +190,15 @@ export default function StageContents({ question }) {
                   key={index}
                   top={top}
                   left={left}
+                  stageSlug={stageSlug}
                   clicked={checkedState[index]}
                   onClick={() => showCorrect(index, checkedState[index])}
                 />
               ))}
             </CanvasB>
           </CanvasWrapper>
-          <ProgressBar countTimer={countTimer} />
-          <CountIcons states={currentIconState} />
+          <ProgressBar countTimer={countTimer} stageSlug={stageSlug} />
+          <CountIcons states={currentIconState} stageSlug={stageSlug} />
         </StageWrapper>
       </StageContainer>
     </>
@@ -245,7 +254,9 @@ const CorrectPoint = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    border: 5px solid ${colors.yellow};
+    border: 5px solid;
+    border-color: ${({ stageSlug }) =>
+      stageSlug === 'animal' ? colors.yellow : colors.green};
     transition: all ease-in-out 0.3s;
     will-change: animation;
     animation: bound forwards 0.6s ease-in-out;

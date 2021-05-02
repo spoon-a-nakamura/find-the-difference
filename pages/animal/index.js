@@ -1,9 +1,8 @@
-import Mission from '../components/Mission'
+import Mission from '../../components/Mission'
 
 const courseValues = {
   categoryName: 'どうぶつ',
-  stageNumber: '1',
-  correctNumber: '4',
+  categoryNumber: '01',
   href: 'animal/1',
 }
 
@@ -12,8 +11,7 @@ export default function CourseAnimals() {
     <>
       <Mission
         categoryName={courseValues.categoryName}
-        stageNumber={courseValues.stageNumber}
-        correctNumber={courseValues.correctNumber}
+        categoryNumber={courseValues.categoryNumber}
         href={courseValues.href}
       />
     </>

@@ -2,21 +2,31 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { colors } from '../components/Colors'
 
-export default function BackToHome({ onClickBackToHome, onClickCancel }) {
+export default function BackToHome({
+  onClickBackToHome,
+  onClickCancel,
+  stageSlug,
+}) {
+  const cancelIconSrc =
+    stageSlug === 'animal'
+      ? '/images/stage/button_close_01.svg'
+      : '/images/stage/button_close_02.svg'
   return (
     <>
       <Modal isOpen={onClickBackToHome}>
         <ModalContainer isOpen={onClickBackToHome}>
           <CancelIcon
-            src='/images/stage/button_close.svg'
+            src={cancelIconSrc}
             alt='閉じる'
             onClick={onClickCancel}
           />
           <Title>ホームに戻りますか？</Title>
           <ButtonWrapper>
-            <CancelButton onClick={onClickCancel}>いいえ</CancelButton>
+            <CancelButton onClick={onClickCancel} stageSlug={stageSlug}>
+              いいえ
+            </CancelButton>
             <Link href='/' prefetch={true}>
-              <ApplyButton>はい</ApplyButton>
+              <ApplyButton stageSlug={stageSlug}>はい</ApplyButton>
             </Link>
           </ButtonWrapper>
         </ModalContainer>
@@ -77,8 +87,10 @@ const CancelButton = styled.div`
   width: 100px;
   border-radius: 100px;
   margin-right: 15px;
-  color: ${colors.green};
-  background: ${colors.paleGreen};
+  color: ${({ stageSlug }) =>
+    stageSlug === 'animal' ? colors.green : colors.purple};
+  background: ${({ stageSlug }) =>
+    stageSlug === 'animal' ? colors.paleGreen : colors.lightPurple};
 `
 const ApplyButton = styled.a`
   font-size: 14px;
@@ -86,5 +98,6 @@ const ApplyButton = styled.a`
   width: 100px;
   border-radius: 100px;
   color: ${colors.white};
-  background: ${colors.green};
+  background: ${({ stageSlug }) =>
+    stageSlug === 'animal' ? colors.green : colors.purple};
 `

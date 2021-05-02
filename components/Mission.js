@@ -4,26 +4,36 @@ import { colors } from '../components/Colors'
 import Container from '../components/Container'
 import { device } from '../components/MediaQuery'
 
-export default function Mission({ categoryName, correctNumber, href }) {
+export default function Mission({ categoryName, categoryNumber, href }) {
   return (
     <Container>
       <MissionWrapper>
         <MissionContents>
           <Title
-            src='/images/mission/mission_heading_01.svg'
+            src={`/images/mission/mission_heading_${categoryNumber}.svg`}
             alt='ミッション'
           />
-          <MissionIcon src='/images/mission/mission_symbol_01.svg' alt='' />
-          <StageName>{categoryName}ステージ</StageName>
-          <CorrectNumber>{correctNumber}個</CorrectNumber>
+          <MissionIcon
+            src={`/images/mission/mission_symbol_${categoryNumber}.svg`}
+            alt=''
+          />
+          <StageName categoryNumber={categoryNumber}>
+            {categoryName}ステージ
+          </StageName>
+          <CorrectNumber categoryNumber={categoryNumber}>
+            ３〜４個
+          </CorrectNumber>
           <Span>の違うところを探してね。</Span>
           <MissionBottom>
-            <CorrectIcon src='/images/mission/mission_correct_01.svg' alt='◯' />
-            <CorrectIconNumber>× {correctNumber}個</CorrectIconNumber>
+            <CorrectIcon
+              src={`/images/mission/mission_correct_${categoryNumber}.svg`}
+              alt='◯'
+            />
+            <CorrectIconNumber>× ３〜４個</CorrectIconNumber>
           </MissionBottom>
         </MissionContents>
         <Link href={href} prefetch={true}>
-          <StartButton>START</StartButton>
+          <StartButton categoryNumber={categoryNumber}>START</StartButton>
         </Link>
       </MissionWrapper>
     </Container>
@@ -39,7 +49,7 @@ const MissionWrapper = styled.div`
   width: 100%;
 `
 const MissionContents = styled.div`
-  background: url(/images/mission/mission_bg_01.svg) center / contain no-repeat;
+  background: url(/images/mission/mission_bg.svg) center / contain no-repeat;
   width: 100%;
   height: 100vw;
   position: relative;
@@ -62,12 +72,14 @@ const MissionIcon = styled.img`
 const StageName = styled.h2`
   font-size: 16px;
   margin-top: 10px;
-  color: ${colors.green};
+  color: ${({ categoryNumber }) =>
+    categoryNumber === '01' ? colors.green : colors.purple};
 `
 const CorrectNumber = styled.p`
   font-size: 40px;
   margin: 10px 0;
-  color: ${colors.orange};
+  color: ${({ categoryNumber }) =>
+    categoryNumber === '01' ? colors.orange : colors.green};
 `
 const Span = styled.p`
   font-size: 14px;
@@ -93,7 +105,8 @@ const StartButton = styled.div`
   padding: 20px;
   width: 60%;
   margin-top: 20px;
-  background: ${colors.orange};
+  background: ${({ categoryNumber }) =>
+    categoryNumber === '01' ? colors.orange : colors.purple};
   color: ${colors.white};
   font-weight: bold;
   font-size: 20px;

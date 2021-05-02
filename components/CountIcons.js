@@ -1,7 +1,12 @@
 import styled from '@emotion/styled'
 
-export default function CountIcons({ states }) {
-  const onFlag = <IconImage src='/images/stage/icon_count_on.svg' alt='on' />
+export default function CountIcons({ states, stageSlug }) {
+  const onFlag =
+    stageSlug === 'animal' ? (
+      <IconImage src='/images/stage/icon_count_on_01.svg' alt='on' />
+    ) : (
+      <IconImage src='/images/stage/icon_count_on_02.svg' alt='on' />
+    )
   const offFlag = <IconImage src='/images/stage/icon_count_off.svg' alt='off' />
   return (
     <IconsWrapper>

@@ -7,9 +7,10 @@ export default function StageHeader({
   stageName,
   countTimer,
   onClickShowModal,
+  stageSlug,
 }) {
   return (
-    <StageHeaderWrapper>
+    <StageHeaderWrapper stageSlug={stageSlug}>
       <HomeButton
         onClick={onClickShowModal}
         src='/images/stage/button_home.svg'
@@ -34,7 +35,10 @@ const StageHeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: url(/images/stage/stage_heading.svg) center / cover no-repeat;
+  background: ${({ stageSlug }) =>
+    stageSlug === 'animal'
+      ? 'url(/images/stage/stage_heading_01.svg) center / cover no-repeat'
+      : 'url(/images/stage/stage_heading_02.svg) center / cover no-repeat'};
   margin-bottom: auto;
 `
 const HomeButton = styled.img`

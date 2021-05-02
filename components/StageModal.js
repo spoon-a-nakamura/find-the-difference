@@ -7,6 +7,7 @@ export default function StageModal({
   isCleared,
   isFailed,
   stageId,
+  stageSlug,
   stageCategory,
   onClickRetry,
   onClickNext,
@@ -44,11 +45,14 @@ export default function StageModal({
           <Result isCleared={isCleared}>
             {isCleared ? clearText : 'GAME OVER'}
           </Result>
-          <Button onClick={isCleared ? onClickNext : onClickRetry}>
+          <Button
+            onClick={isCleared ? onClickNext : onClickRetry}
+            stageSlug={stageSlug}
+          >
             {isCleared ? '次のステージへ' : 'リトライ'}
           </Button>
           <Link href='/' prefetch={true}>
-            <BackHome>HOMEに戻る</BackHome>
+            <BackHome stageSlug={stageSlug}>HOMEに戻る</BackHome>
           </Link>
         </ModalContainer>
       </Modal>
@@ -137,13 +141,15 @@ const Button = styled.a`
   font-weight: bold;
   color: ${colors.white};
   padding: 15px 30px;
-  background: ${colors.green};
+  background: ${({ stageSlug }) =>
+    stageSlug === 'animal' ? colors.green : colors.purple};
   border-radius: 100px;
   margin-top: 20px;
 `
 const BackHome = styled.a`
   margin-top: 15px;
   font-size: 14px;
-  color: ${colors.green};
+  color: ${({ stageSlug }) =>
+    stageSlug === 'animal' ? colors.green : colors.purple};
   text-decoration: underline;
 `

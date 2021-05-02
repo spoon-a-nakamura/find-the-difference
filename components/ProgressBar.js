@@ -3,13 +3,18 @@ import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
 import { defaultTime } from '../components/DefaultTime'
 
-export default function ProgressBar({ countTimer }) {
+export default function ProgressBar({ countTimer, stageSlug }) {
   // プログレスの進捗率
   const percentsOffset = 100 - (countTimer / defaultTime) * 100
 
   // カウントダウンタイマーの状況
   const isFirstHalf = 60 > percentsOffset
   const isClimax = 85 < percentsOffset
+
+  const progressBaseColor =
+    stageSlug === 'animal' ? colors.orange : colors.purple
+  const progressClimaxColor =
+    stageSlug === 'animal' ? colors.red : colors.darkPurple
 
   return (
     <>
@@ -21,7 +26,7 @@ export default function ProgressBar({ countTimer }) {
             width: `${percentsOffset}%`,
           }}
           style={{
-            background: isClimax ? colors.red : colors.orange,
+            background: isClimax ? progressClimaxColor : progressBaseColor,
             opacity: isFirstHalf ? 0.4 : 1,
           }}
         />
