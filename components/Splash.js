@@ -48,6 +48,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   color: ${colors.white};
   text-align: center;
+  margin-bottom: -12vw;
 `
 const TitleSub = styled.div`
   font-size: 16px;
@@ -58,8 +59,9 @@ const TitleMain = styled.div`
 `
 const Start = styled(motion.div)`
   font-size: 16px;
-  color: ${colors.white};
-  letter-spacing: 1px;
-  margin-bottom: 50px;
   font-weight: bold;
+  letter-spacing: 1px;
+  color: ${colors.white};
+  margin-top: -5vw;
+  margin-bottom: 8vw;
 `
