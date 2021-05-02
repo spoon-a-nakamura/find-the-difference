@@ -11,20 +11,13 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <Head>
-        <meta httpEquiv='content-language' content='ja' />
-        <meta httpEquiv='content-type' content='text/html; charset=UTF-8' />
-        <meta
-          httpEquiv='content-style-type'
-          content='text/css; charset=UTF-8'
-        />
-        <meta
-          httpEquiv='content-script-type'
-          content='text/javascript; charset=UTF-8'
-        />
-        <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
+        <meta charset='utf-8' />
+        <meta http-equiv='content-language' content='ja' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='theme-color' content='#298C6D' />
         <meta name='robots' content='index,follow' />
+        <meta name='author' content='スタジオスプーン' />
         <title>スタジオスプーンのまちがい探し</title>
         <meta
           name='description'
@@ -39,6 +32,11 @@ export default function App({ Component, pageProps, router }) {
           href='https://find-the-difference-zeta.vercel.app/'
         />
         <link rel='shortcut icon' href='/images/common/favicon.ico' />
+        <link
+          rel='apple-touch-icon'
+          href='/images/common/apple-touch-icon.png'
+        />
+
         <meta
           property='og:site_name'
           content='スタジオスプーンのまちがい探し'
@@ -56,9 +54,10 @@ export default function App({ Component, pageProps, router }) {
           property='og:url'
           content='https://find-the-difference-zeta.vercel.app/'
         />
-        <meta property='og:type' content='product' />
+        <meta property='og:type' content='website' />
         <meta property='og:locale' content='ja_JP' />
         <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='studio_spoon' />
       </Head>
       <GlobalCss />
       <AnimateSharedLayout>
