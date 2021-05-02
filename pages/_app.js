@@ -58,6 +58,18 @@ export default function App({ Component, pageProps, router }) {
         <meta property='og:locale' content='ja_JP' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='studio_spoon' />
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-VE1Y2H2E69'
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VE1Y2H2E69');`,
+          }}
+        ></script>
       </Head>
       <GlobalCss />
       <AnimateSharedLayout>
