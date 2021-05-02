@@ -70,12 +70,20 @@ export default function StageModal({
           <Result isCleared={isCleared}>
             {isCleared ? clearText : 'GAME OVER'}
           </Result>
-          <Button
-            onClick={isCleared ? onClickNext : onClickRetry}
-            stageSlug={stageSlug}
-          >
-            {isCleared ? '次のステージへ' : 'リトライ'}
-          </Button>
+          <ButtonWrapper>
+            <ButtonLeft
+              onClick={isCleared ? onClickRetry : onClickNext}
+              stageSlug={stageSlug}
+            >
+              {isCleared ? 'もう一度' : 'スキップ'}
+            </ButtonLeft>
+            <ButtonRight
+              onClick={isCleared ? onClickNext : onClickRetry}
+              stageSlug={stageSlug}
+            >
+              {isCleared ? '次へ進む' : 'リトライ'}
+            </ButtonRight>
+          </ButtonWrapper>
           <Link href='/' prefetch={true}>
             <BackHome stageSlug={stageSlug}>HOMEに戻る</BackHome>
           </Link>
@@ -161,15 +169,29 @@ const ClearText5 = styled.span`
 const ClearText6 = styled.span`
   color: ${colors.green};
 `
-const Button = styled.a`
+const ButtonWrapper = styled.div`
+  margin-top: 20px;
   font-size: 14px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const ButtonLeft = styled.div`
+  color: ${({ stageSlug }) =>
+    stageSlug === 'animal' ? colors.green : colors.purple};
+  padding: 15px 30px;
+  background: ${({ stageSlug }) =>
+    stageSlug === 'animal' ? colors.paleGreen : colors.lightPurple};
+  border-radius: 100px;
+  margin-right: 10px;
+`
+const ButtonRight = styled.div`
   color: ${colors.white};
   padding: 15px 30px;
   background: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.green : colors.purple};
   border-radius: 100px;
-  margin-top: 20px;
 `
 const BackHome = styled.a`
   margin-top: 15px;
