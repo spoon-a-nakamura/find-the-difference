@@ -9,16 +9,20 @@ export const questions = [
     stageImageB: '/images/animal/01b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 19,
+        left: 37,
       },
       {
-        top: 50,
+        top: 66,
         left: 13,
       },
       {
-        top: 60,
-        left: 73,
+        top: 74,
+        left: 71,
+      },
+      {
+        top: 26,
+        left: 86,
       },
     ],
   },
@@ -32,16 +36,20 @@ export const questions = [
     stageImageB: '/images/animal/02b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 69,
+        left: 8,
       },
       {
-        top: 50,
-        left: 13,
+        top: 71,
+        left: 46,
       },
       {
-        top: 60,
-        left: 73,
+        top: 43,
+        left: 74,
+      },
+      {
+        top: 84,
+        left: 64,
       },
     ],
   },
@@ -55,16 +63,20 @@ export const questions = [
     stageImageB: '/images/animal/03b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 69,
+        left: 1,
       },
       {
-        top: 50,
-        left: 13,
+        top: 26,
+        left: 38,
       },
       {
-        top: 60,
-        left: 73,
+        top: 27,
+        left: 45,
+      },
+      {
+        top: 71,
+        left: 57,
       },
     ],
   },
@@ -78,16 +90,16 @@ export const questions = [
     stageImageB: '/images/animal/04b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 54,
+        left: 44,
       },
       {
-        top: 50,
-        left: 13,
+        top: 65,
+        left: 72,
       },
       {
-        top: 60,
-        left: 73,
+        top: 84,
+        left: 71,
       },
     ],
   },
@@ -101,16 +113,20 @@ export const questions = [
     stageImageB: '/images/animal/05b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 41,
+        left: 16,
       },
       {
-        top: 50,
-        left: 13,
+        top: 79,
+        left: 0,
       },
       {
-        top: 60,
-        left: 73,
+        top: 58,
+        left: 56,
+      },
+      {
+        top: 78,
+        left: 68,
       },
     ],
   },
@@ -124,16 +140,20 @@ export const questions = [
     stageImageB: '/images/animal/06b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 22,
+        left: 44,
       },
       {
-        top: 50,
+        top: 49,
+        left: -3,
+      },
+      {
+        top: 77,
         left: 13,
       },
       {
-        top: 60,
-        left: 73,
+        top: 79,
+        left: 76,
       },
     ],
   },
@@ -147,16 +167,20 @@ export const questions = [
     stageImageB: '/images/animal/07b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 5,
+        left: 43,
       },
       {
-        top: 50,
-        left: 13,
+        top: 64,
+        left: 25,
       },
       {
-        top: 60,
-        left: 73,
+        top: 72,
+        left: 46,
+      },
+      {
+        top: 82,
+        left: 91,
       },
     ],
   },
@@ -170,16 +194,20 @@ export const questions = [
     stageImageB: '/images/animal/08b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 44,
+        left: 51,
       },
       {
-        top: 50,
-        left: 13,
+        top: 74,
+        left: 12,
       },
       {
-        top: 60,
-        left: 73,
+        top: 84,
+        left: 52,
+      },
+      {
+        top: 37,
+        left: 61,
       },
     ],
   },
@@ -193,22 +221,26 @@ export const questions = [
     stageImageB: '/images/animal/09b@2x.png',
     points: [
       {
-        top: 20,
+        top: 31,
         left: 42,
       },
       {
-        top: 50,
-        left: 13,
+        top: 34,
+        left: 25,
       },
       {
-        top: 60,
-        left: 73,
+        top: 63,
+        left: 43,
+      },
+      {
+        top: 55,
+        left: 71,
       },
     ],
   },
   {
     stageId: 10,
-    nextId: null,
+    nextId: 1,
     stageName: 'さる',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',
@@ -216,16 +248,20 @@ export const questions = [
     stageImageB: '/images/animal/10b@2x.png',
     points: [
       {
-        top: 20,
-        left: 42,
+        top: 18,
+        left: 46,
       },
       {
-        top: 50,
+        top: 47,
         left: 13,
       },
       {
-        top: 60,
-        left: 73,
+        top: 43,
+        left: 64,
+      },
+      {
+        top: 61,
+        left: 56,
       },
     ],
   },
