@@ -74,6 +74,18 @@ export default function StageContents({ question }) {
     }
   }
 
+  // 間違えたら５秒減るペナルティ関数
+  const penalty = () => {
+    setCountTimer((count) => {
+      if (count < 5) {
+        setIsFailed(true)
+        return (count = 0)
+      } else {
+        return count - 5
+      }
+    })
+  }
+
   // リトライの為のState定義
   const [refresh, setRefresh] = useState(0)
 
@@ -111,17 +123,11 @@ export default function StageContents({ question }) {
 
   // 次ページに進む関数
   const moveNextStage = () => {
-    setIsFailed(false)
-    setIsCleared(false)
-    setCheckedState([...Array(points.length)].fill(false))
-    setCountTimer(defaultTime)
-    setTimeout(() => {
-      setRefresh((val) => val + 1)
-      nextPage()
-    }, 100)
+    nextPage()
+    resetAllStates()
   }
 
-  // Homeに戻るモーダルを出し分けするStateと関数
+  // モーダルを出し分けするStateと関数
   const [isShowModal, setIsShowModal] = useState(false)
   const showModal = () => {
     setIsShowModal(true)
@@ -130,17 +136,6 @@ export default function StageContents({ question }) {
     setIsShowModal(false)
   }
 
-  // 間違えたら５秒減るペナルティ関数
-  const penalty = () => {
-    setCountTimer((count) => {
-      if (count < 5) {
-        setIsFailed(true)
-        return (count = 0)
-      } else {
-        return count - 5
-      }
-    })
-  }
   return (
     <>
       <BackToHome

@@ -101,6 +101,10 @@ export const questions = [
         top: 84,
         left: 71,
       },
+      {
+        top: 34,
+        left: 37,
+      },
     ],
   },
   {
