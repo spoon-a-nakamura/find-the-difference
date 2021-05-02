@@ -116,10 +116,10 @@ const ModalContainer = styled.div`
     isCleared
       ? 'url(/images/stage/bg_cleared.svg)'
       : 'url(/images/stage/bg_failed.svg)'};
-  width: 100%;
-  height: 100vw;
+  width: 80%;
+  height: 80vw;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
@@ -127,8 +127,10 @@ const ModalContainer = styled.div`
   will-change: opacity, transform;
   transition: opacity ease-in-out 0.5s 0.3s, transform ease-in-out 0.5s 0.3s;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-  margin-top: ${({ isCleared }) => (isCleared ? '-35px' : '-55px')};
+  margin-top: ${({ isCleared }) => (isCleared ? '-15px' : '-55px')};
   transform: ${({ isOpen }) => (isOpen ? 'scale(1)' : 'scale(0)')};
+  top: ${({ isCleared }) => (isCleared ? '-25px' : '-55px')};
+  transition: all ease 0.5s;
 `
 const CharacterWrapper = styled.div`
   margin-top: -280px;
@@ -138,15 +140,16 @@ const CharacterWrapper = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transform: ${({ isOpen }) =>
     isOpen ? 'scale(0.5) translateY(0)' : 'scale(0.5) translateY(300px)'};
+  transition: all ease 0.5s;
 `
 const StageName = styled.p`
-  margin-top: ${({ isCleared }) => (isCleared ? '80px' : '55px')};
+  margin-top: ${({ isCleared }) => (isCleared ? '7vw' : '-5vw')};
   display: block;
   font-size: 16px;
 `
 const Result = styled.p`
   display: block;
-  font-size: 38px;
+  font-size: ${({ isCleared }) => (isCleared ? '38px' : '33px')};
   margin-top: 5px;
   color: ${({ isCleared }) => (isCleared ? colors.orange : colors.black)};
 `
