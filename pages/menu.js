@@ -22,13 +22,17 @@ export default function Menu() {
     type: 'tween',
     duration: 5,
   }
+  const size = {
+    scale: 0.8,
+    translateY: '-40px',
+  }
   return (
     <Container>
       <Title>
         <TitleSub>スタジオスプーンの</TitleSub>
         <TitleMain>まちがい探し</TitleMain>
       </Title>
-      <Character eyeAnimate={eyeAnimate} />
+      <Character eyeAnimate={eyeAnimate} size={size} />
       <Course>
         <CourseTitleWrapper>
           <CourseTitle>
@@ -88,8 +92,9 @@ const Course = styled.div`
   height: auto;
   position: relative;
   z-index: 1;
-  margin-top: -15vw;
+  margin-top: -40vw;
   padding-top: 40px;
+  padding-bottom: 20px;
 `
 const CourseTitleWrapper = styled.div`
   display: flex;

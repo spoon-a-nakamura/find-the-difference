@@ -10,7 +10,6 @@ export default function StageModal({
   stageCategory,
   onClickRetry,
   onClickNext,
-  onClickShowModal,
 }) {
   const eyeAnimateCleared = {
     x: [0, 5, -7, 8, 0],
@@ -18,7 +17,7 @@ export default function StageModal({
   }
   const eyeAnimateFailed = {
     x: [0, 5, -7, 8, 0],
-    y: [-8, -12, -11, -9, -8],
+    y: [-2, -6, -5, -3, -2],
   }
   const clearText = (
     <ClearText>
@@ -65,6 +64,10 @@ const Modal = styled.div`
   width: 100%;
   height: 100%;
   z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   will-change: opacity;
   transition: opacity ease-in-out 0.5s;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
@@ -91,7 +94,7 @@ const ModalContainer = styled.div`
   transform: ${({ isOpen }) => (isOpen ? 'scale(1)' : 'scale(0)')};
 `
 const CharacterWrapper = styled.div`
-  margin-top: -120px;
+  margin-top: -280px;
   transform-origin: bottom;
   will-change: opacity, transform;
   transition: opacity ease-in-out 0s 1s, transform ease-in-out 1s 0.5s;

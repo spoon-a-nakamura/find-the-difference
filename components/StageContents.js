@@ -110,11 +110,11 @@ export default function StageContents({ question }) {
 
   // 次ページに進む関数
   const moveNextStage = () => {
+    setIsFailed(false)
     setIsCleared(false)
+    setCheckedState([...Array(points.length)].fill(false))
+    setCountTimer(defaultTime)
     setTimeout(() => {
-      setIsFailed(false)
-      setCheckedState([...Array(points.length)].fill(false))
-      setCountTimer(defaultTime)
       setRefresh((val) => val + 1)
       nextPage()
     }, 100)

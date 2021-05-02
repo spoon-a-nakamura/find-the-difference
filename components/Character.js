@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
 
-export default function Character({ eyeAnimate }) {
+export default function Character({ eyeAnimate, size }) {
   const eyeTransition = {
     repeat: Infinity,
     repeatDelay: 1,
@@ -9,34 +9,34 @@ export default function Character({ eyeAnimate }) {
     duration: 10,
   }
   return (
-    <Face>
+    <Base style={size}>
       <LeftEye animate={eyeAnimate} transition={eyeTransition} />
       <RightEye animate={eyeAnimate} transition={eyeTransition} />
-    </Face>
+    </Base>
   )
 }
-const Face = styled.div`
-  width: 268px;
-  height: 308px;
-  background: url(/images/common/face@2x.png) center / contain no-repeat;
+const Base = styled(motion.div)`
+  width: 293px;
+  height: 432px;
+  background: url(/images/character/base@2x.png) center / contain no-repeat;
   display: flex;
   justify-content: center;
-  z-index: 2;
+  z-index: 0;
   position: relative;
   margin: 10vw auto 0;
 `
 const LeftEye = styled(motion.div)`
-  width: 40px;
-  height: 40px;
-  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
+  width: 51px;
+  height: 54px;
+  background: url(/images/character/eye_left@2x.png) center / contain no-repeat;
   margin-right: 30px;
-  margin-top: 115px;
+  margin-top: 160px;
   position: relative;
 `
 const RightEye = styled(motion.div)`
-  width: 40px;
-  height: 40px;
-  background: url(/images/common/left_eye@2x.png) center / contain no-repeat;
-  margin-top: 115px;
+  width: 51px;
+  height: 54px;
+  background: url(/images/character/eye_right@2x.png) center / contain no-repeat;
+  margin-top: 160px;
   position: relative;
 `
