@@ -9,13 +9,16 @@ export default function Mission({ categoryName, correctNumber, href }) {
     <Container>
       <MissionWrapper>
         <MissionContents>
-          <Title src='/images/mission/mission_heading.svg' alt='ミッション' />
-          <MissionIcon src='/images/mission/mission_symbol.svg' alt='' />
+          <Title
+            src='/images/mission/mission_heading_01.svg'
+            alt='ミッション'
+          />
+          <MissionIcon src='/images/mission/mission_symbol_01.svg' alt='' />
           <StageName>{categoryName}ステージ</StageName>
           <CorrectNumber>{correctNumber}個</CorrectNumber>
           <Span>の違うところを探してね。</Span>
           <MissionBottom>
-            <CorrectIcon src='/images/mission/mission_correct.svg' alt='◯' />
+            <CorrectIcon src='/images/mission/mission_correct_01.svg' alt='◯' />
             <CorrectIconNumber>× {correctNumber}個</CorrectIconNumber>
           </MissionBottom>
         </MissionContents>
@@ -36,7 +39,7 @@ const MissionWrapper = styled.div`
   width: 100%;
 `
 const MissionContents = styled.div`
-  background: url(/images/mission/mission_bg.svg) center / contain no-repeat;
+  background: url(/images/mission/mission_bg_01.svg) center / contain no-repeat;
   width: 100%;
   height: 100vw;
   position: relative;
