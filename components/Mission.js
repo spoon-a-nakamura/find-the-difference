@@ -20,16 +20,14 @@ export default function Mission({ categoryName, categoryNumber, href }) {
           <StageName categoryNumber={categoryNumber}>
             {categoryName}ステージ
           </StageName>
-          <CorrectNumber categoryNumber={categoryNumber}>
-            ３〜４個
-          </CorrectNumber>
+          <CorrectNumber categoryNumber={categoryNumber}>４個</CorrectNumber>
           <Span>の違うところを探してね。</Span>
           <MissionBottom>
             <CorrectIcon
               src={`/images/mission/mission_correct_${categoryNumber}.svg`}
               alt='◯'
             />
-            <CorrectIconNumber>× ３〜４個</CorrectIconNumber>
+            <CorrectIconNumber>× ４個</CorrectIconNumber>
           </MissionBottom>
         </MissionContents>
         <Link href={href} prefetch={true}>
