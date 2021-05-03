@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { colors } from '../components/Colors'
 import Container from '../components/Container'
-import { deviceMax } from '../components/MediaQuery'
+import { device } from '../components/MediaQuery'
 
 export default function Mission({ categoryName, categoryNumber, href }) {
   return (
@@ -42,7 +42,7 @@ const MissionWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;1
+  flex-direction: column;
   height: 100%;
   width: 100%;
 `
@@ -62,7 +62,7 @@ const MissionIcon = styled.img`
   width: 70px;
   display: block;
   margin: auto;
-  @media ${deviceMax.mobileS} {
+  @media ${device.mobileS} {
     margin-top: -10px;
     width: 50px;
   }
@@ -92,7 +92,7 @@ const MissionBottom = styled.div`
 `
 const CorrectIcon = styled.img`
   margin-right: 10px;
-  @media ${deviceMax.mobileS} {
+  @media ${device.mobileS} {
     width: 50px;
   }
 `

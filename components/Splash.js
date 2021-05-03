@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
 import Character from '../components/Character'
-import { deviceMin } from '../components/MediaQuery'
 
 export default function Splash() {
   const eyeAnimate = {
@@ -22,16 +21,14 @@ export default function Splash() {
   return (
     <Link href='menu' prefetch={true}>
       <Wrapper>
-        <Inner>
-          <Title>
-            <TitleSub>スタジオスプーンの</TitleSub>
-            <TitleMain>まちがい探し</TitleMain>
-          </Title>
-          <Character eyeAnimate={eyeAnimate} />
-          <Start animate={startAnimate} transition={startTransition}>
-            TAP TO START
-          </Start>
-        </Inner>
+        <Title>
+          <TitleSub>スタジオスプーンの</TitleSub>
+          <TitleMain>まちがい探し</TitleMain>
+        </Title>
+        <Character eyeAnimate={eyeAnimate} />
+        <Start animate={startAnimate} transition={startTransition}>
+          TAP TO START
+        </Start>
       </Wrapper>
     </Link>
   )
@@ -47,14 +44,6 @@ const Wrapper = styled.div`
   height: 100%;
   background: ${colors.green};
   transition: all 0.5s ease-in-out;
-`
-const Inner = styled.div`
-  max-width: 428px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 `
 const Title = styled.div`
   color: ${colors.white};
@@ -75,9 +64,4 @@ const Start = styled(motion.div)`
   color: ${colors.white};
   margin-top: -5vw;
   margin-bottom: 8vw;
-  position: relative;
-  z-index: 2;
-  @media ${deviceMin.mobileL} {
-    margin-top: -25px;
-  }
 `
