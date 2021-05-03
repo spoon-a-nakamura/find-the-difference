@@ -23,9 +23,10 @@ export default function StageContents({ question }) {
     stageImageB,
   } = question
 
-  // クリア / ゲームオーバー判定のState定義
+  // クリア / ゲームオーバー / コース終了判定のState定義
   const [isCleared, setIsCleared] = useState(false)
   const [isFailed, setIsFailed] = useState(false)
+  const [isFinished, setIsFinished] = useState(false)
 
   // 正解判定のState定義
   const [checkedState, setCheckedState] = useState(
@@ -55,9 +56,17 @@ export default function StageContents({ question }) {
         )
         // すべて正解した場合の処理
         if (newCheckedState.every((value) => value)) {
-          setTimeout(() => {
-            setIsCleared(true)
-          }, 1500)
+          if (nextId) {
+            console.log('setIsCleared')
+            setTimeout(() => {
+              setIsCleared(true)
+            }, 1200)
+          } else {
+            console.log('setIsFinished')
+            setTimeout(() => {
+              setIsFinished(true)
+            }, 1200)
+          }
         }
         return newCheckedState
       })
@@ -112,6 +121,7 @@ export default function StageContents({ question }) {
   const resetAllStates = () => {
     setIsCleared(false)
     setIsFailed(false)
+    setIsFinished(false)
     setCheckedState([...Array(points.length)].fill(false))
     setCountTimer(defaultTime)
     setRefresh((val) => val + 1)
@@ -125,6 +135,14 @@ export default function StageContents({ question }) {
   const moveNextStage = () => {
     nextPage()
     resetAllStates()
+  }
+
+  // コース選択に戻るRouter
+  const backPage = () => router.push(`/menu`)
+
+  // コース選択画面に戻る関数
+  const moveBackStage = () => {
+    backPage()
   }
 
   // モーダルを出し分けするStateと関数
@@ -146,10 +164,12 @@ export default function StageContents({ question }) {
       <StageModal
         isCleared={isCleared}
         isFailed={isFailed}
+        isFinished={isFinished}
         stageId={stageId}
         stageCategory={stageCategory}
         onClickRetry={resetAllStates}
         onClickNext={moveNextStage}
+        onClickBack={moveBackStage}
         onClickShowModal={showModal}
         stageSlug={stageSlug}
       />

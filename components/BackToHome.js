@@ -63,7 +63,7 @@ const ModalContainer = styled.div`
   z-index: 3;
   margin-bottom: 40px;
   will-change: opacity, transform;
-  transition: opacity ease-in-out 0.5s 0.3s, transform ease-in-out 0.5s 0.3s;
+  transition: all ease-in-out 0.5s 0.3s;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transform: ${({ isOpen }) => (isOpen ? 'scale(1)' : 'scale(0)')};
 `

@@ -244,7 +244,7 @@ export const questions = [
   },
   {
     stageId: 10,
-    nextId: 1,
+    nextId: null,
     stageName: 'さる',
     stageCategory: 'どうぶつ',
     stageSlug: 'animal',

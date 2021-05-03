@@ -7,11 +7,13 @@ import Confetti from 'react-confetti'
 export default function StageModal({
   isCleared,
   isFailed,
+  isFinished,
   stageId,
   stageSlug,
   stageCategory,
   onClickRetry,
   onClickNext,
+  onClickBack,
 }) {
   const eyeAnimateCleared = {
     x: [0, 5, -7, 8, 0],
@@ -22,19 +24,30 @@ export default function StageModal({
     y: [-2, -6, -5, -3, -2],
   }
   const clearText = (
-    <ClearText>
-      <ClearText1>C</ClearText1>
-      <ClearText2>L</ClearText2>
-      <ClearText3>E</ClearText3>
-      <ClearText4>A</ClearText4>
-      <ClearText5>R</ClearText5>
-      <ClearText6>!</ClearText6>
-    </ClearText>
+    <ColorfulText>
+      <ColorfulText1>C</ColorfulText1>
+      <ColorfulText2>L</ColorfulText2>
+      <ColorfulText3>E</ColorfulText3>
+      <ColorfulText4>A</ColorfulText4>
+      <ColorfulText5>R</ColorfulText5>
+      <ColorfulText6>!</ColorfulText6>
+    </ColorfulText>
+  )
+  const finishText = (
+    <ColorfulText>
+      <ColorfulText1>F</ColorfulText1>
+      <ColorfulText2>I</ColorfulText2>
+      <ColorfulText3>N</ColorfulText3>
+      <ColorfulText4>I</ColorfulText4>
+      <ColorfulText5>S</ColorfulText5>
+      <ColorfulText6>H</ColorfulText6>
+      <ColorfulText7>!</ColorfulText7>
+    </ColorfulText>
   )
   return (
     <>
-      <Modal isOpen={isCleared || isFailed}>
-        {isCleared && (
+      <Modal isOpen={isCleared || isFailed || isFinished}>
+        {isCleared || isFinished ? (
           <Confetti
             width={375}
             height={667}
@@ -56,32 +69,48 @@ export default function StageModal({
               left: 0,
             }}
           />
+        ) : (
+          ''
         )}
 
-        <CharacterWrapper isOpen={isCleared || isFailed}>
+        <CharacterWrapper isOpen={isCleared || isFailed || isFinished}>
           <Character
             eyeAnimate={isCleared ? eyeAnimateCleared : eyeAnimateFailed}
           />
         </CharacterWrapper>
-        <ModalContainer isCleared={isCleared} isOpen={isCleared || isFailed}>
-          <StageName isCleared={isCleared}>
-            {stageCategory}ステージ {stageId}
+        <ModalContainer
+          isCleared={isCleared}
+          isFinished={isFinished}
+          isOpen={isCleared || isFailed || isFinished}
+        >
+          <StageName isCleared={isCleared} isFinished={isFinished}>
+            {isFinished
+              ? `${stageCategory}ステージ`
+              : isCleared
+              ? '全てのステージ'
+              : `${stageCategory}ステージ ${stageId}`}
           </StageName>
-          <Result isCleared={isCleared}>
-            {isCleared ? clearText : 'GAME OVER'}
+          <Result isCleared={isCleared} isFinished={isFinished}>
+            {isFinished ? finishText : isCleared ? clearText : 'GAME OVER'}
           </Result>
           <ButtonWrapper>
             <ButtonLeft
-              onClick={isCleared ? onClickRetry : onClickNext}
+              onClick={isCleared || isFinished ? onClickRetry : onClickNext}
               stageSlug={stageSlug}
             >
-              {isCleared ? 'もう一度' : 'スキップ'}
+              {isCleared || isFinished ? 'もう一度' : 'スキップ'}
             </ButtonLeft>
             <ButtonRight
-              onClick={isCleared ? onClickNext : onClickRetry}
+              onClick={
+                isFinished
+                  ? onClickBack
+                  : isCleared
+                  ? onClickNext
+                  : onClickRetry
+              }
               stageSlug={stageSlug}
             >
-              {isCleared ? '次へ進む' : 'リトライ'}
+              {isFinished ? '終了する' : isCleared ? '次へ進む' : 'リトライ'}
             </ButtonRight>
           </ButtonWrapper>
           <Link href='/' prefetch={true}>
@@ -112,8 +141,8 @@ const Modal = styled.div`
 `
 const ModalContainer = styled.div`
   background: url(/images/stage/bg_cleared.svg) center / contain no-repeat;
-  background-image: ${({ isCleared }) =>
-    isCleared
+  background-image: ${({ isCleared, isFinished }) =>
+    isCleared || isFinished
       ? 'url(/images/stage/bg_cleared.svg)'
       : 'url(/images/stage/bg_failed.svg)'};
   width: 80%;
@@ -125,11 +154,13 @@ const ModalContainer = styled.div`
   position: relative;
   z-index: 3;
   will-change: opacity, transform;
-  transition: opacity ease-in-out 0.5s 0.3s, transform ease-in-out 0.5s 0.3s;
+  transition: all ease-in-out 0.5s 0.3s;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-  margin-top: ${({ isCleared }) => (isCleared ? '-15px' : '-55px')};
+  margin-top: ${({ isCleared, isFinished }) =>
+    isCleared || isFinished ? '-15px' : '-55px'};
   transform: ${({ isOpen }) => (isOpen ? 'scale(1)' : 'scale(0)')};
-  top: ${({ isCleared }) => (isCleared ? '-25px' : '-55px')};
+  top: ${({ isCleared, isFinished }) =>
+    isCleared || isFinished ? '-25px' : '-55px'};
   transition: all ease 0.5s;
 `
 const CharacterWrapper = styled.div`
@@ -143,34 +174,39 @@ const CharacterWrapper = styled.div`
   transition: all ease 0.5s;
 `
 const StageName = styled.p`
-  margin-top: ${({ isCleared }) => (isCleared ? '7vw' : '-5vw')};
+  margin-top: ${({ isCleared, isFinished }) =>
+    isCleared || isFinished ? '7vw' : '-5vw'};
   display: block;
   font-size: 16px;
 `
 const Result = styled.p`
   display: block;
-  font-size: ${({ isCleared }) => (isCleared ? '38px' : '33px')};
+  font-size: ${({ isCleared, isFinished }) =>
+    isCleared || isFinished ? '38px' : '33px'};
   margin-top: 5px;
   color: ${({ isCleared }) => (isCleared ? colors.orange : colors.black)};
 `
-const ClearText = styled.span``
-const ClearText1 = styled.span`
+const ColorfulText = styled.span``
+const ColorfulText1 = styled.span`
   color: ${colors.yellow};
 `
-const ClearText2 = styled.span`
+const ColorfulText2 = styled.span`
   color: ${colors.orange};
 `
-const ClearText3 = styled.span`
+const ColorfulText3 = styled.span`
   color: ${colors.green};
 `
-const ClearText4 = styled.span`
+const ColorfulText4 = styled.span`
   color: ${colors.yellow};
 `
-const ClearText5 = styled.span`
+const ColorfulText5 = styled.span`
   color: ${colors.orange};
 `
-const ClearText6 = styled.span`
+const ColorfulText6 = styled.span`
   color: ${colors.green};
+`
+const ColorfulText7 = styled.span`
+  color: ${colors.orange};
 `
 const ButtonWrapper = styled.div`
   margin-top: 20px;

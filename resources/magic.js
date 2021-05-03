@@ -24,7 +24,7 @@ export const questions = [
   },
   {
     stageId: 2,
-    nextId: 1,
+    nextId: null,
     stageName: '魔法薬',
     stageCategory: 'まほう',
     stageSlug: 'magic',
