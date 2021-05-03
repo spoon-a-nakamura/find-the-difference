@@ -24,7 +24,7 @@ const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(/images/common/footer_bg.svg) center 10px / cover repeat-x;
+  background: url(/images/common/footer_bg.svg) center 10px / contain repeat-x;
   z-index: 10;
 `
 const CopyRights = styled.a`
