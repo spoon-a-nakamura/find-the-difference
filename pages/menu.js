@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Container from '../components/Container'
 import { colors } from '../components/Colors'
 import Character from '../components/Character'
+import { deviceMin } from '../components/MediaQuery'
 
 export default function Menu() {
   const eyeAnimate = {
@@ -81,6 +82,9 @@ const Title = styled.div`
 const TitleSub = styled.div`
   font-size: 16px;
   margin-top: 3vw;
+  @media ${deviceMin.mobileL} {
+    margin-top: 20px;
+  }
 `
 const TitleMain = styled.div`
   font-size: 28px;
@@ -96,6 +100,9 @@ const Course = styled.div`
   margin-top: -40vw;
   padding-top: 40px;
   padding-bottom: 20px;
+  @media ${deviceMin.mobileL} {
+    margin-top: -40px;
+  }
 `
 const CourseTitleWrapper = styled.div`
   display: flex;

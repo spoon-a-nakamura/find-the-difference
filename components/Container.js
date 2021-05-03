@@ -46,4 +46,8 @@ const Main = styled(motion.div)`
   height: 100%;
   position: absolute;
   top: 0;
+  max-width: 428px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
 `
