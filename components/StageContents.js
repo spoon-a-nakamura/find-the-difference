@@ -9,11 +9,11 @@ import { colors } from './Colors'
 import { useRouter } from 'next/router'
 import ProgressBar from '../components/ProgressBar'
 import Nice from '../components/Nice'
-import { useGameLevelContext } from '../components/GameLevelContext'
+import { GameLevelContext } from '../components/GameLevelContext'
 
-const defaultTime = useGameLevelContext.gameLevel
-console.log(defaultTime)
 export default function StageContents({ question }) {
+  const defaultTime = useContext(GameLevelContext).gameLevel
+  console.log(`ステージ：${defaultTime}`)
   const {
     points,
     stageId,

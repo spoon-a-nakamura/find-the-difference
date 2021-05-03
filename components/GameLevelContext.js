@@ -34,4 +34,9 @@ const GameLevelProvider = ({ children }) => {
 }
 
 const useGameLevelContext = () => useContext(GameLevelContext)
-export { GameLevelProvider, useGameLevelContext, gameLevelModes }
+export {
+  GameLevelProvider,
+  useGameLevelContext,
+  gameLevelModes,
+  GameLevelContext,
+}

@@ -2,16 +2,8 @@ import styled from '@emotion/styled'
 import Footer from './Footer'
 import { motion } from 'framer-motion'
 import { colors } from '../components/Colors'
-import {
-  GameLevelProvider,
-  useGameLevelContext,
-} from '../components/GameLevelContext'
 
 export default function Container({ children }) {
-  // コンテキストに保存されている初期値をgameLevelに代入
-  const { gameLevel, setGameLevel } = useGameLevelContext()
-  console.log(gameLevel)
-  console.log(setGameLevel())
   const animate = {
     scale: 1,
     opacity: 1,
@@ -28,17 +20,15 @@ export default function Container({ children }) {
     duration: 0.5,
   }
   return (
-    <GameLevelProvider value={(gameLevel, setGameLevel)}>
-      <ContainerWrapper
-        animate={animate}
-        initial={initial}
-        exit={exit}
-        transition={transition}
-      >
-        <Main>{children}</Main>
-        <Footer />
-      </ContainerWrapper>
-    </GameLevelProvider>
+    <ContainerWrapper
+      animate={animate}
+      initial={initial}
+      exit={exit}
+      transition={transition}
+    >
+      <Main>{children}</Main>
+      <Footer />
+    </ContainerWrapper>
   )
 }
 
