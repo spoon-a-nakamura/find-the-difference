@@ -1,5 +1,5 @@
-import emotionReset from 'emotion-reset'
-import { Global, css } from '@emotion/react'
+import emotionReset from 'emotion-reset';
+import { Global, css } from '@emotion/react';
 
 export default function GlobalCss() {
   return (
@@ -46,5 +46,5 @@ export default function GlobalCss() {
         }
       `}
     />
-  )
+  );
 }

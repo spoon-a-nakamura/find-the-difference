@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import styled from '@emotion/styled'
-import { colors } from './Colors'
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import styled from '@emotion/styled';
+import { colors } from './Colors';
 
 const messages = [
   'NICE!',
@@ -21,14 +21,14 @@ const messages = [
   'FANTASTIC!',
   'INCREDIBLE!',
   'UNBELIEVABLE!',
-]
+];
 
 export default function StageContents({ isNice }) {
-  const [fixMessage, setFixMessage] = useState(null)
+  const [fixMessage, setFixMessage] = useState(null);
   useEffect(() => {
-    setFixMessage(messages[Math.floor(Math.random() * messages.length)])
-  }, [isNice])
-  return <PraiseMessage isNice={isNice}>{fixMessage}</PraiseMessage>
+    setFixMessage(messages[Math.floor(Math.random() * messages.length)]);
+  }, [isNice]);
+  return <PraiseMessage isNice={isNice}>{fixMessage}</PraiseMessage>;
 }
 const PraiseMessage = styled(motion.div)`
   display: flex;
@@ -61,4 +61,4 @@ const PraiseMessage = styled(motion.div)`
       transform: scale(1.5) rotate(-5deg) translateY(-50%);
     }
   }
-`
+`;

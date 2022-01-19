@@ -1,31 +1,31 @@
-import Link from 'next/link'
-import styled from '@emotion/styled'
-import { motion } from 'framer-motion'
-import Container from '../components/Container'
-import { colors } from '../components/Colors'
-import Character from '../components/Character'
+import Link from 'next/link';
+import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
+import Container from '../components/Container';
+import { colors } from '../components/Colors';
+import Character from '../components/Character';
 
 export default function Menu() {
   const eyeAnimate = {
     x: [0, 5, -7, 8, 0],
     y: [10, 14, 13, 11, 10],
-  }
+  };
   const tagAnimateAnimal = {
     rotate: [0, 5, -2, 10, -3, 0],
-  }
+  };
   const tagAnimateMagic = {
     rotate: [0, 10, 3, 4, 0],
-  }
+  };
   const tagTransition = {
     repeat: Infinity,
     repeatDelay: 1,
     type: 'tween',
     duration: 5,
-  }
+  };
   const size = {
     scale: 0.8,
     translateY: '-40px',
-  }
+  };
   return (
     <Container>
       <Title>
@@ -44,7 +44,7 @@ export default function Menu() {
           </CourseTitle>
         </CourseTitleWrapper>
         <Cards>
-          <Link href='animal' prefetch={true}>
+          <Link href="animal" prefetch={true}>
             <AnimalCard>
               <AnimalCardTag
                 animate={tagAnimateAnimal}
@@ -53,7 +53,7 @@ export default function Menu() {
               <AnimalCardCaption>ANIMAL</AnimalCardCaption>
             </AnimalCard>
           </Link>
-          <Link href='magic' prefetch={true}>
+          <Link href="magic" prefetch={true}>
             <MagicCard>
               <MagicCardTag
                 animate={tagAnimateMagic}
@@ -65,7 +65,7 @@ export default function Menu() {
         </Cards>
       </Course>
     </Container>
-  )
+  );
 }
 
 const Title = styled.div`
@@ -77,15 +77,15 @@ const Title = styled.div`
   position: absolute;
   top: 0px;
   transition: all ease 0.5s;
-`
+`;
 const TitleSub = styled.div`
   font-size: 16px;
   margin-top: 3vw;
-`
+`;
 const TitleMain = styled.div`
   font-size: 28px;
   margin-top: 5px;
-`
+`;
 const Course = styled.div`
   background: url(/images/menu/course_bg_head.svg) center top / contain
     no-repeat;
@@ -96,7 +96,7 @@ const Course = styled.div`
   margin-top: -40vw;
   padding-top: 40px;
   padding-bottom: 20px;
-`
+`;
 const CourseTitleWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -119,23 +119,23 @@ const CourseTitleWrapper = styled.div`
     background: #eee;
     margin-left: 10px;
   }
-`
+`;
 const CourseTitle = styled.p`
   font-size: 18px;
   color: ${colors.black};
-`
+`;
 const CourseTitleBlack = styled.span`
   color: ${colors.black};
-`
+`;
 const CourseTitleOrange = styled.span`
   color: ${colors.orange};
-`
+`;
 const CourseTitleYellow = styled.span`
   color: ${colors.yellow};
-`
+`;
 const CourseTitleGreen = styled.span`
   color: ${colors.green};
-`
+`;
 const Cards = styled.div`
   display: flex;
   justify-content: space-between;
@@ -144,7 +144,7 @@ const Cards = styled.div`
   margin-top: -5px;
   padding: 20px 20px 50px;
   background: ${colors.white};
-`
+`;
 const AnimalCard = styled.div`
   background: url(/images/menu/img_animal@2x.png) center / contain no-repeat;
   width: 163px;
@@ -152,7 +152,7 @@ const AnimalCard = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-`
+`;
 const AnimalCardTag = styled(motion.div)`
   background: url(/images/menu/tag_animal.svg) center / contain no-repeat;
   width: 156px;
@@ -160,7 +160,7 @@ const AnimalCardTag = styled(motion.div)`
   position: absolute;
   left: -20px;
   top: -5px;
-`
+`;
 const AnimalCardCaption = styled.p`
   display: block;
   font-size: 12px;
@@ -168,7 +168,7 @@ const AnimalCardCaption = styled.p`
   position: absolute;
   bottom: -20px;
   color: ${colors.orange};
-`
+`;
 const MagicCard = styled.div`
   background: url(/images/menu/img_magic@2x.png) center / contain no-repeat;
   width: 163px;
@@ -176,7 +176,7 @@ const MagicCard = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-`
+`;
 const MagicCardTag = styled(motion.div)`
   background: url(/images/menu/tag_magic.svg) center / contain no-repeat;
   width: 156px;
@@ -184,7 +184,7 @@ const MagicCardTag = styled(motion.div)`
   position: absolute;
   left: -20px;
   top: -5px;
-`
+`;
 const MagicCardCaption = styled.p`
   display: block;
   font-size: 12px;
@@ -192,4 +192,4 @@ const MagicCardCaption = styled.p`
   position: absolute;
   bottom: -20px;
   color: ${colors.orange};
-`
+`;

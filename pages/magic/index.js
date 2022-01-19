@@ -1,10 +1,10 @@
-import Mission from '../../components/Mission'
+import Mission from '../../components/Mission';
 
 const courseValues = {
   categoryName: 'まほう',
   categoryNumber: '02',
   href: 'magic/1',
-}
+};
 
 export default function CourseMagics() {
   return (
@@ -15,5 +15,5 @@ export default function CourseMagics() {
         href={courseValues.href}
       />
     </>
-  )
+  );
 }

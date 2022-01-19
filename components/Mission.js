@@ -1,8 +1,8 @@
-import styled from '@emotion/styled'
-import Link from 'next/link'
-import { colors } from '../components/Colors'
-import Container from '../components/Container'
-import { device } from '../components/MediaQuery'
+import styled from '@emotion/styled';
+import Link from 'next/link';
+import { colors } from '../components/Colors';
+import Container from '../components/Container';
+import { device } from '../components/MediaQuery';
 
 export default function Mission({ categoryName, categoryNumber, href }) {
   return (
@@ -11,11 +11,11 @@ export default function Mission({ categoryName, categoryNumber, href }) {
         <MissionContents>
           <Title
             src={`/images/mission/mission_heading_${categoryNumber}.svg`}
-            alt='ミッション'
+            alt="ミッション"
           />
           <MissionIcon
             src={`/images/mission/mission_symbol_${categoryNumber}.svg`}
-            alt=''
+            alt=""
           />
           <StageName categoryNumber={categoryNumber}>
             {categoryName}ステージ
@@ -25,7 +25,7 @@ export default function Mission({ categoryName, categoryNumber, href }) {
           <MissionBottom>
             <CorrectIcon
               src={`/images/mission/mission_correct_${categoryNumber}.svg`}
-              alt='◯'
+              alt="◯"
             />
             <CorrectIconNumber>× ４個</CorrectIconNumber>
           </MissionBottom>
@@ -35,7 +35,7 @@ export default function Mission({ categoryName, categoryNumber, href }) {
         </Link>
       </MissionWrapper>
     </Container>
-  )
+  );
 }
 
 const MissionWrapper = styled.div`
@@ -45,19 +45,19 @@ const MissionWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-`
+`;
 const MissionContents = styled.div`
   background: url(/images/mission/mission_bg.svg) center / contain no-repeat;
   width: 100%;
   height: 100vw;
   position: relative;
-`
+`;
 const Title = styled.img`
   position: relative;
   top: -4vw;
   display: block;
   margin: auto;
-`
+`;
 const MissionIcon = styled.img`
   width: 70px;
   display: block;
@@ -66,22 +66,22 @@ const MissionIcon = styled.img`
     margin-top: -10px;
     width: 50px;
   }
-`
+`;
 const StageName = styled.h2`
   font-size: 16px;
   margin-top: 10px;
   color: ${({ categoryNumber }) =>
     categoryNumber === '01' ? colors.green : colors.purple};
-`
+`;
 const CorrectNumber = styled.p`
   font-size: 40px;
   margin: 10px 0;
   color: ${({ categoryNumber }) =>
     categoryNumber === '01' ? colors.orange : colors.green};
-`
+`;
 const Span = styled.p`
   font-size: 14px;
-`
+`;
 const MissionBottom = styled.div`
   width: 100%;
   display: flex;
@@ -89,16 +89,16 @@ const MissionBottom = styled.div`
   align-items: center;
   position: absolute;
   bottom: 8vw;
-`
+`;
 const CorrectIcon = styled.img`
   margin-right: 10px;
   @media ${device.mobileS} {
     width: 50px;
   }
-`
+`;
 const CorrectIconNumber = styled.p`
   font-size: 20px;
-`
+`;
 const StartButton = styled.div`
   padding: 20px;
   width: 60%;
@@ -109,4 +109,4 @@ const StartButton = styled.div`
   font-weight: bold;
   font-size: 20px;
   border-radius: 100px;
-`
+`;
