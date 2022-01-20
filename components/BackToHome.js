@@ -25,7 +25,7 @@ export default function BackToHome({
             <CancelButton onClick={onClickCancel} stageSlug={stageSlug}>
               いいえ
             </CancelButton>
-            <Link href="/" prefetch={true}>
+            <Link href="/">
               <ApplyButton stageSlug={stageSlug}>はい</ApplyButton>
             </Link>
           </ButtonWrapper>

@@ -19,7 +19,7 @@ export default function Splash() {
     duration: 2,
   };
   return (
-    <Link href="menu" prefetch={true}>
+    <Link href="menu">
       <Wrapper>
         <Title>
           <TitleSub>スタジオスプーンの</TitleSub>

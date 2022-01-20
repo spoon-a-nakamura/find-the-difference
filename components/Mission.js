@@ -30,7 +30,7 @@ export default function Mission({ categoryName, categoryNumber, href }) {
             <CorrectIconNumber>× ４個</CorrectIconNumber>
           </MissionBottom>
         </MissionContents>
-        <Link href={href} prefetch={true}>
+        <Link href={href}>
           <StartButton categoryNumber={categoryNumber}>START</StartButton>
         </Link>
       </MissionWrapper>

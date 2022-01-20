@@ -113,7 +113,7 @@ export default function StageModal({
               {isFinished ? '終了する' : isCleared ? '次へ進む' : 'リトライ'}
             </ButtonRight>
           </ButtonWrapper>
-          <Link href="/" prefetch={true}>
+          <Link href="/">
             <BackHome stageSlug={stageSlug}>HOMEに戻る</BackHome>
           </Link>
         </ModalContainer>
