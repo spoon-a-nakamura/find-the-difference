@@ -1,11 +1,11 @@
 const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px',
+  mobileS: '32.0rem',
+  mobileM: '37.5rem',
+  mobileL: '42.5rem',
+  tablet: '76.8rem',
+  laptop: '102.4rem',
+  laptopL: '144.0rem',
+  desktop: '256.0rem',
 };
 export const device = {
   mobileS: `(max-width: ${size.mobileS})`,

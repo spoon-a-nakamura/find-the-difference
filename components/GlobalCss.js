@@ -12,6 +12,9 @@ export default function GlobalCss() {
           -webkit-font-smoothing: antialiased;
           font-smoothing: antialiased;
         }
+        html {
+          font-size: calc(1000vw / 375);
+        }
         html,
         body {
           padding: 0;

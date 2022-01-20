@@ -157,33 +157,33 @@ const ModalContainer = styled.div`
   transition: all ease-in-out 0.5s 0.3s;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   margin-top: ${({ isCleared, isFinished }) =>
-    isCleared || isFinished ? '-15px' : '-55px'};
+    isCleared || isFinished ? '-1.5rem' : '-5.5rem'};
   transform: ${({ isOpen }) => (isOpen ? 'scale(1)' : 'scale(0)')};
   top: ${({ isCleared, isFinished }) =>
-    isCleared || isFinished ? '-25px' : '-55px'};
+    isCleared || isFinished ? '-2.5rem' : '-5.5rem'};
   transition: all ease 0.5s;
 `;
 const CharacterWrapper = styled.div`
-  margin-top: -280px;
+  margin-top: -28rem;
   transform-origin: bottom;
   will-change: opacity, transform;
   transition: opacity ease-in-out 0s 1s, transform ease-in-out 1s 0.5s;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transform: ${({ isOpen }) =>
-    isOpen ? 'scale(0.5) translateY(0)' : 'scale(0.5) translateY(300px)'};
+    isOpen ? 'scale(0.5) translateY(0)' : 'scale(0.5) translateY(30.0rem)'};
   transition: all ease 0.5s;
 `;
 const StageName = styled.p`
   margin-top: ${({ isCleared, isFinished }) =>
     isCleared || isFinished ? '7vw' : '-5vw'};
   display: block;
-  font-size: 16px;
+  font-size: 1.6rem;
 `;
 const Result = styled.p`
   display: block;
   font-size: ${({ isCleared, isFinished }) =>
-    isCleared || isFinished ? '38px' : '33px'};
-  margin-top: 5px;
+    isCleared || isFinished ? '3.8rem' : '3.3rem'};
+  margin-top: 0.5rem;
   color: ${({ isCleared }) => (isCleared ? colors.orange : colors.black)};
 `;
 const ColorfulText = styled.span``;
@@ -209,8 +209,8 @@ const ColorfulText7 = styled.span`
   color: ${colors.orange};
 `;
 const ButtonWrapper = styled.div`
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -219,22 +219,22 @@ const ButtonWrapper = styled.div`
 const ButtonLeft = styled.div`
   color: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.green : colors.purple};
-  padding: 15px 30px;
+  padding: 1.5rem 3rem;
   background: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.paleGreen : colors.lightPurple};
-  border-radius: 100px;
-  margin-right: 10px;
+  border-radius: 10rem;
+  margin-right: 1rem;
 `;
 const ButtonRight = styled.div`
   color: ${colors.white};
-  padding: 15px 30px;
+  padding: 1.5rem 3rem;
   background: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.green : colors.purple};
-  border-radius: 100px;
+  border-radius: 10rem;
 `;
 const BackHome = styled.a`
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
   color: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.green : colors.purple};
   text-decoration: underline;

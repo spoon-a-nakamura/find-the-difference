@@ -226,7 +226,7 @@ const StageContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: calc(100% - 10px);
+  height: calc(100% - 1rem);
 `;
 const StageWrapper = styled.div`
   display: flex;
@@ -240,9 +240,9 @@ const CanvasWrapper = styled.div`
   position: relative;
   width: 85%;
   background: ${colors.white};
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.05);
   overflow: hidden;
 `;
 const CanvasA = styled.div`
@@ -258,8 +258,8 @@ const Art = styled.img`
 `;
 const CorrectPoint = styled.div`
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   top: ${({ top }) => `${top}%`};
   left: ${({ left }) => `${left}%`};
   &::before {
@@ -270,7 +270,7 @@ const CorrectPoint = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    border: 5px solid;
+    border: 0.5rem solid;
     border-color: ${({ stageSlug }) =>
       stageSlug === 'animal' ? colors.yellow : colors.green};
     transition: all ease-in-out 0.3s;
@@ -283,7 +283,7 @@ const CorrectPoint = styled.div`
     css`
       &::before {
         opacity: 0;
-        transform: scale(0.2) translateY(20px);
+        transform: scale(0.2) translateY(2rem);
         animation: none;
         pointer-events: initial;
       }
@@ -291,23 +291,23 @@ const CorrectPoint = styled.div`
   @keyframes bound {
     0% {
       opacity: 0;
-      transform: scale(0.2) translateY(20px);
+      transform: scale(0.2) translateY(2rem);
     }
     50% {
       opacity: 1;
-      transform: scale(1.2) translateY(-10px);
+      transform: scale(1.2) translateY(-1rem);
     }
     80% {
       opacity: 1;
-      transform: scale(0.9) translateY(5px);
+      transform: scale(0.9) translateY(0.5rem);
     }
     90% {
       opacity: 1;
-      transform: scale(1.1) translateY(-5px);
+      transform: scale(1.1) translateY(-0.5rem);
     }
     100% {
       opacity: 1;
-      transform: scale(1) translateY(0px);
+      transform: scale(1) translateY(0rem);
     }
   }
 `;

@@ -61,42 +61,42 @@ const ModalContainer = styled.div`
   flex-direction: column;
   position: relative;
   z-index: 3;
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
   will-change: opacity, transform;
   transition: all ease-in-out 0.5s 0.3s;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transform: ${({ isOpen }) => (isOpen ? 'scale(1)' : 'scale(0)')};
 `;
 const CancelIcon = styled.img`
-  width: 44px;
-  height: 44px;
+  width: 4.4rem;
+  height: 4.4rem;
   position: absolute;
-  right: -10px;
-  top: 10px;
+  right: -1rem;
+  top: 1rem;
 `;
 const Title = styled.p`
-  font-size: 20px;
+  font-size: 2rem;
 `;
 const ButtonWrapper = styled.div`
-  margin-top: 30px;
+  margin-top: 3rem;
   display: flex;
 `;
 const CancelButton = styled.div`
-  font-size: 14px;
-  padding: 15px;
-  width: 100px;
-  border-radius: 100px;
-  margin-right: 15px;
+  font-size: 1.4rem;
+  padding: 1.5rem;
+  width: 10rem;
+  border-radius: 10rem;
+  margin-right: 1.5rem;
   color: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.green : colors.purple};
   background: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.paleGreen : colors.lightPurple};
 `;
 const ApplyButton = styled.a`
-  font-size: 14px;
-  padding: 15px;
-  width: 100px;
-  border-radius: 100px;
+  font-size: 1.4rem;
+  padding: 1.5rem;
+  width: 10rem;
+  border-radius: 10rem;
   color: ${colors.white};
   background: ${({ stageSlug }) =>
     stageSlug === 'animal' ? colors.green : colors.purple};

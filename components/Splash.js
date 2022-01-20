@@ -51,16 +51,16 @@ const Title = styled.div`
   margin-bottom: -12vw;
 `;
 const TitleSub = styled.div`
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
 `;
 const TitleMain = styled.div`
-  font-size: 40px;
+  font-size: 4rem;
 `;
 const Start = styled(motion.div)`
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
   color: ${colors.white};
   margin-top: -5vw;
   margin-bottom: 8vw;

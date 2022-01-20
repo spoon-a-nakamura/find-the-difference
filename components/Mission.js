@@ -59,28 +59,28 @@ const Title = styled.img`
   margin: auto;
 `;
 const MissionIcon = styled.img`
-  width: 70px;
+  width: 7rem;
   display: block;
   margin: auto;
   @media ${device.mobileS} {
-    margin-top: -10px;
-    width: 50px;
+    margin-top: -1rem;
+    width: 5rem;
   }
 `;
 const StageName = styled.h2`
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 1.6rem;
+  margin-top: 1rem;
   color: ${({ categoryNumber }) =>
     categoryNumber === '01' ? colors.green : colors.purple};
 `;
 const CorrectNumber = styled.p`
-  font-size: 40px;
-  margin: 10px 0;
+  font-size: 4rem;
+  margin: 1rem 0;
   color: ${({ categoryNumber }) =>
     categoryNumber === '01' ? colors.orange : colors.green};
 `;
 const Span = styled.p`
-  font-size: 14px;
+  font-size: 1.4rem;
 `;
 const MissionBottom = styled.div`
   width: 100%;
@@ -91,22 +91,22 @@ const MissionBottom = styled.div`
   bottom: 8vw;
 `;
 const CorrectIcon = styled.img`
-  margin-right: 10px;
+  margin-right: 1rem;
   @media ${device.mobileS} {
-    width: 50px;
+    width: 5rem;
   }
 `;
 const CorrectIconNumber = styled.p`
-  font-size: 20px;
+  font-size: 2rem;
 `;
 const StartButton = styled.div`
-  padding: 20px;
+  padding: 2rem;
   width: 60%;
-  margin-top: 20px;
+  margin-top: 2rem;
   background: ${({ categoryNumber }) =>
     categoryNumber === '01' ? colors.orange : colors.purple};
   color: ${colors.white};
   font-weight: bold;
-  font-size: 20px;
-  border-radius: 100px;
+  font-size: 2rem;
+  border-radius: 10rem;
 `;

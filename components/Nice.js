@@ -39,9 +39,9 @@ const PraiseMessage = styled(motion.div)`
   width: 100%;
   color: ${colors.white};
   z-index: 1;
-  font-size: 60px;
+  font-size: 6rem;
   pointer-events: none;
-  text-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 5rem rgba(0, 0, 0, 0.2);
   will-change: opacity, transform;
   transition: all ease-in-out 0.5s;
   opacity: ${({ isNice }) => (isNice ? 1 : 0)};

@@ -22,7 +22,7 @@ export default function CountIcons({ states, stageSlug }) {
 }
 const IconsWrapper = styled.div`
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,10 +34,10 @@ const Icons = styled.ul`
   align-items: center;
 `;
 const Icon = styled.li`
-  margin-top: -2px;
+  margin-top: -0.2rem;
 `;
 const IconImage = styled.img`
   transform: rotate(-45deg);
-  width: 40px;
-  height: 40px;
+  width: 4rem;
+  height: 4rem;
 `;

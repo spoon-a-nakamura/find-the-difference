@@ -24,7 +24,7 @@ export default function Menu() {
   };
   const size = {
     scale: 0.8,
-    translateY: '-40px',
+    translateY: '-4.0rem',
   };
   return (
     <Container>
@@ -73,18 +73,18 @@ const Title = styled.div`
   text-align: center;
   background: url(/images/menu/heading_bg.svg) center top / contain no-repeat;
   width: 100%;
-  height: 180px;
+  height: 18rem;
   position: absolute;
-  top: 0px;
+  top: 0rem;
   transition: all ease 0.5s;
 `;
 const TitleSub = styled.div`
-  font-size: 16px;
+  font-size: 1.6rem;
   margin-top: 3vw;
 `;
 const TitleMain = styled.div`
-  font-size: 28px;
-  margin-top: 5px;
+  font-size: 2.8rem;
+  margin-top: 0.5rem;
 `;
 const Course = styled.div`
   background: url(/images/menu/course_bg_head.svg) center top / contain
@@ -94,8 +94,8 @@ const Course = styled.div`
   position: relative;
   z-index: 1;
   margin-top: -40vw;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 `;
 const CourseTitleWrapper = styled.div`
   display: flex;
@@ -103,25 +103,25 @@ const CourseTitleWrapper = styled.div`
   align-items: center;
   &::before {
     content: '';
-    width: 18px;
-    height: 18px;
-    border-radius: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.8rem;
     display: block;
     background: #eee;
-    margin-right: 10px;
+    margin-right: 1rem;
   }
   &::after {
     content: '';
-    width: 18px;
-    height: 18px;
-    border-radius: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.8rem;
     display: block;
     background: #eee;
-    margin-left: 10px;
+    margin-left: 1rem;
   }
 `;
 const CourseTitle = styled.p`
-  font-size: 18px;
+  font-size: 1.8rem;
   color: ${colors.black};
 `;
 const CourseTitleBlack = styled.span`
@@ -140,56 +140,56 @@ const Cards = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  margin-top: -5px;
-  padding: 20px 20px 50px;
+  gap: 2rem;
+  margin-top: -0.5rem;
+  padding: 2rem 2rem 5rem;
   background: ${colors.white};
 `;
 const AnimalCard = styled.div`
   background: url(/images/menu/img_animal@2x.png) center / contain no-repeat;
-  width: 163px;
-  height: 275px;
+  width: 16.3rem;
+  height: 27.5rem;
   position: relative;
   display: flex;
   justify-content: center;
 `;
 const AnimalCardTag = styled(motion.div)`
   background: url(/images/menu/tag_animal.svg) center / contain no-repeat;
-  width: 156px;
-  height: 61px;
+  width: 15.6rem;
+  height: 6.1rem;
   position: absolute;
-  left: -20px;
-  top: -5px;
+  left: -2rem;
+  top: -0.5rem;
 `;
 const AnimalCardCaption = styled.p`
   display: block;
-  font-size: 12px;
-  margin-top: 10px;
+  font-size: 1.2rem;
+  margin-top: 1rem;
   position: absolute;
-  bottom: -20px;
+  bottom: -2rem;
   color: ${colors.orange};
 `;
 const MagicCard = styled.div`
   background: url(/images/menu/img_magic@2x.png) center / contain no-repeat;
-  width: 163px;
-  height: 275px;
+  width: 16.3rem;
+  height: 27.5rem;
   position: relative;
   display: flex;
   justify-content: center;
 `;
 const MagicCardTag = styled(motion.div)`
   background: url(/images/menu/tag_magic.svg) center / contain no-repeat;
-  width: 156px;
-  height: 61px;
+  width: 15.6rem;
+  height: 6.1rem;
   position: absolute;
-  left: -20px;
-  top: -5px;
+  left: -2rem;
+  top: -0.5rem;
 `;
 const MagicCardCaption = styled.p`
   display: block;
-  font-size: 12px;
-  margin-top: 10px;
+  font-size: 1.2rem;
+  margin-top: 1rem;
   position: absolute;
-  bottom: -20px;
+  bottom: -2rem;
   color: ${colors.orange};
 `;
