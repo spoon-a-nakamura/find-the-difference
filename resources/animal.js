@@ -269,7 +269,7 @@ export const questions = [
       },
     ],
   },
-]
+];
 // const generateQuestions = (input) => {
 //   return input.map((data, length) => ({
 //     ...data,

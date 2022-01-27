@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
-import { colors } from '../components/Colors'
+import styled from '@emotion/styled';
+import { colors } from '../components/Colors';
 
 export default function StageHeader({
   stageCategory,
@@ -13,8 +13,8 @@ export default function StageHeader({
     <StageHeaderWrapper stageSlug={stageSlug}>
       <HomeButton
         onClick={onClickShowModal}
-        src='/images/stage/button_home.svg'
-        alt='homeに戻る'
+        src="/images/stage/button_home.svg"
+        alt="homeに戻る"
       />
       <StageHeaderTitle>
         <StageTitle>
@@ -24,14 +24,14 @@ export default function StageHeader({
       </StageHeaderTitle>
       <StageTimer>{countTimer}</StageTimer>
     </StageHeaderWrapper>
-  )
+  );
 }
 
 const StageHeaderWrapper = styled.header`
   width: 100%;
-  height: 77px;
-  padding: 0 18px 15px 25px;
-  font-size: 12px;
+  height: 7.7rem;
+  padding: 0 1.8rem 1.5rem 2.5rem;
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,10 +40,11 @@ const StageHeaderWrapper = styled.header`
       ? 'url(/images/stage/stage_heading_01.svg) center / cover no-repeat'
       : 'url(/images/stage/stage_heading_02.svg) center / cover no-repeat'};
   margin-bottom: auto;
-`
+`;
 const HomeButton = styled.img`
   position: relative;
-`
+  width: 2.938rem;
+`;
 const StageHeaderTitle = styled.h1`
   display: flex;
   justify-content: center;
@@ -53,24 +54,24 @@ const StageHeaderTitle = styled.h1`
   color: ${colors.white};
   width: 100%;
   position: relative;
-`
+`;
 const StageTitle = styled.span`
-  font-size: 12px;
+  font-size: 1.2rem;
   display: block;
-`
+`;
 const StageName = styled.span`
-  margin-top: 5px;
-  font-size: 20px;
-`
+  margin-top: 0.5rem;
+  font-size: 2rem;
+`;
 const StageTimer = styled.p`
-  font-size: 14px;
+  font-size: 1.4rem;
   background: ${colors.white};
-  width: 52px;
-  height: 40px;
+  width: 5.2rem;
+  height: 4rem;
   box-sizing: border-box;
-  border-radius: 100px;
+  border-radius: 10rem;
   color: ${colors.black};
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;

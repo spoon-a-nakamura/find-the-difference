@@ -1,41 +1,41 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-const heavyFilePaths = []
+const heavyFilePaths = [];
 
 async function waitHeavyFileLoading() {
   if (heavyFilePaths.length === 0) {
-    return
+    return;
   }
 
   const promises = heavyFilePaths.map((path) => {
     return new Promise((resolve) => {
-      const img = new Image()
-      img.onload = resolve
-      img.onerror = resolve
-      img.src = path
-    })
-  })
-  await Promise.all(promises)
+      const img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve;
+      img.src = path;
+    });
+  });
+  await Promise.all(promises);
 }
 
 async function sleep(ms) {
   return new Promise((resolve) => {
-    setTimeout(resolve, ms)
-  })
+    setTimeout(resolve, ms);
+  });
 }
 
 export default function useWaitResourcesLoading(callback) {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    let isSubscribed = true
+    let isSubscribed = true;
     Promise.all([waitHeavyFileLoading(), sleep(1500)]).then(() => {
       if (isSubscribed) {
-        setIsLoaded(true)
+        setIsLoaded(true);
       }
-    })
+    });
     return () => {
-      isSubscribed = false
-    }
-  }, [])
-  return isLoaded
+      isSubscribed = false;
+    };
+  }, []);
+  return isLoaded;
 }

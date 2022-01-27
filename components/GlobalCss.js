@@ -1,5 +1,5 @@
-import emotionReset from 'emotion-reset'
-import { Global, css } from '@emotion/react'
+import emotionReset from 'emotion-reset';
+import { Global, css } from '@emotion/react';
 
 export default function GlobalCss() {
   return (
@@ -12,6 +12,9 @@ export default function GlobalCss() {
           -webkit-font-smoothing: antialiased;
           font-smoothing: antialiased;
         }
+        html {
+          font-size: calc(1000vw / 375);
+        }
         html,
         body {
           padding: 0;
@@ -22,14 +25,6 @@ export default function GlobalCss() {
           font-weight: 400;
           font-style: normal;
           color: #707070;
-          width: 100%;
-          height: 100%;
-        }
-        #__next {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
         }
         html {
           visibility: hidden;
@@ -46,5 +41,5 @@ export default function GlobalCss() {
         }
       `}
     />
-  )
+  );
 }

@@ -1,20 +1,20 @@
-import styled from '@emotion/styled'
-import { motion } from 'framer-motion'
-import { colors } from '../components/Colors'
-import { defaultTime } from '../components/DefaultTime'
+import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
+import { colors } from '../components/Colors';
+import { defaultTime } from '../components/DefaultTime';
 
 export default function ProgressBar({ countTimer, stageSlug }) {
   // プログレスの進捗率
-  const percentsOffset = 100 - (countTimer / defaultTime) * 100
+  const percentsOffset = 100 - (countTimer / defaultTime) * 100;
 
   // カウントダウンタイマーの状況
-  const isFirstHalf = 60 > percentsOffset
-  const isClimax = 85 < percentsOffset
+  const isFirstHalf = 60 > percentsOffset;
+  const isClimax = 85 < percentsOffset;
 
   const progressBaseColor =
-    stageSlug === 'animal' ? colors.orange : colors.purple
+    stageSlug === 'animal' ? colors.orange : colors.purple;
   const progressClimaxColor =
-    stageSlug === 'animal' ? colors.red : colors.darkPurple
+    stageSlug === 'animal' ? colors.red : colors.darkPurple;
 
   return (
     <>
@@ -32,18 +32,18 @@ export default function ProgressBar({ countTimer, stageSlug }) {
         />
       </ProgressWrapper>
     </>
-  )
+  );
 }
 
 const ProgressWrapper = styled(motion.div)`
   width: 85%;
-  height: 20px;
-  border-radius: 20px;
+  height: 2rem;
+  border-radius: 2rem;
   position: relative;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 1rem;
   background: ${colors.white};
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
   &::after {
     content: '';
     display: block;
@@ -52,15 +52,15 @@ const ProgressWrapper = styled(motion.div)`
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
-    border: 4px solid ${colors.white};
+    border-radius: 2rem;
+    border: 0.4rem solid ${colors.white};
   }
-`
+`;
 const Progress = styled(motion.div)`
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 2rem;
   position: absolute;
   left: 0;
   transition: all ease 0.3s;
-`
+`;

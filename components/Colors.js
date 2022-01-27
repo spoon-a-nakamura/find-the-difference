@@ -10,4 +10,4 @@ export const colors = {
   lightPurple: '#F6EDFA',
   darkPurple: '#8F57D3',
   wine: '#D104AA',
-}
+};
