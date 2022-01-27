@@ -11,9 +11,9 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
-        <meta http-equiv="content-language" content="ja" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="content-language" content="ja" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#298C6D" />
         <meta name="robots" content="index,follow" />
