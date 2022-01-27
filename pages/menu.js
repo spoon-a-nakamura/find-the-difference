@@ -28,59 +28,76 @@ export default function Menu() {
   };
   return (
     <Container>
-      <Title>
-        <TitleSub>スタジオスプーンの</TitleSub>
-        <TitleMain>まちがい探し</TitleMain>
-      </Title>
-      <Character eyeAnimate={eyeAnimate} size={size} />
-      <Course>
-        <CourseTitleWrapper>
-          <CourseTitle>
-            <CourseTitleOrange>どちらか</CourseTitleOrange>
-            <CourseTitleBlack>の</CourseTitleBlack>
-            <CourseTitleYellow>コース</CourseTitleYellow>
-            <CourseTitleBlack>を</CourseTitleBlack>
-            <CourseTitleGreen>選んでね</CourseTitleGreen>
-          </CourseTitle>
-        </CourseTitleWrapper>
-        <Cards>
-          <Link href="animal">
-            <AnimalCard>
-              <AnimalCardTag
-                animate={tagAnimateAnimal}
-                transition={tagTransition}
-              />
-              <AnimalCardCaption>ANIMAL</AnimalCardCaption>
-            </AnimalCard>
-          </Link>
-          <Link href="magic">
-            <MagicCard>
-              <MagicCardTag
-                animate={tagAnimateMagic}
-                transition={tagTransition}
-              />
-              <MagicCardCaption>MAGIC</MagicCardCaption>
-            </MagicCard>
-          </Link>
-        </Cards>
-      </Course>
+      <Wrapper>
+        <Header>
+          <Title>
+            <TitleSub>スタジオスプーンの</TitleSub>
+            <TitleMain>まちがい探し</TitleMain>
+          </Title>
+          <CharacterWrapper>
+            <Character eyeAnimate={eyeAnimate} size={size} />
+          </CharacterWrapper>
+        </Header>
+        <Course>
+          <CourseTitleWrapper>
+            <CourseTitle>
+              <CourseTitleOrange>どちらか</CourseTitleOrange>
+              <CourseTitleBlack>の</CourseTitleBlack>
+              <CourseTitleYellow>コース</CourseTitleYellow>
+              <CourseTitleBlack>を</CourseTitleBlack>
+              <CourseTitleGreen>選んでね</CourseTitleGreen>
+            </CourseTitle>
+          </CourseTitleWrapper>
+          <Cards>
+            <Link href="animal">
+              <AnimalCard>
+                <AnimalCardTag
+                  animate={tagAnimateAnimal}
+                  transition={tagTransition}
+                />
+                <AnimalCardCaption>ANIMAL</AnimalCardCaption>
+              </AnimalCard>
+            </Link>
+            <Link href="magic">
+              <MagicCard>
+                <MagicCardTag
+                  animate={tagAnimateMagic}
+                  transition={tagTransition}
+                />
+                <MagicCardCaption>MAGIC</MagicCardCaption>
+              </MagicCard>
+            </Link>
+          </Cards>
+        </Course>
+      </Wrapper>
     </Container>
   );
 }
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+const Header = styled.div`
+  flex-grow: 0;
+`;
+
+const CharacterWrapper = styled.div`
+  margin: -5.8rem auto -16rem;
+`;
 
 const Title = styled.div`
   color: ${colors.white};
   text-align: center;
   background: url(/images/menu/heading_bg.svg) center top / contain no-repeat;
   width: 100%;
-  height: 18rem;
-  position: absolute;
-  top: 0rem;
+  height: 10rem;
   transition: all ease 0.5s;
+  padding-top: 1.5rem;
 `;
 const TitleSub = styled.div`
   font-size: 1.6rem;
-  margin-top: 3vw;
 `;
 const TitleMain = styled.div`
   font-size: 2.8rem;
@@ -90,12 +107,12 @@ const Course = styled.div`
   background: url(/images/menu/course_bg_head.svg) center top / contain
     no-repeat;
   width: 100%;
-  height: auto;
   position: relative;
   z-index: 1;
-  margin-top: -40vw;
   padding-top: 4rem;
-  padding-bottom: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 `;
 const CourseTitleWrapper = styled.div`
   display: flex;
@@ -141,10 +158,11 @@ const Cards = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  margin-top: -0.5rem;
-  padding: 2rem 2rem 5rem;
+  padding: 2rem 2rem 6rem;
   background: ${colors.white};
+  flex-grow: 1;
 `;
+
 const AnimalCard = styled.div`
   background: url(/images/menu/img_animal@2x.png) center / contain no-repeat;
   width: 16.3rem;
