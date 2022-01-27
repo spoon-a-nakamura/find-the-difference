@@ -28,7 +28,7 @@ const Message = styled.p`
 const DeviceMessage = () => (
   <Root>
     <Message>
-      縦向きのスマートフォンでお楽しみください。
+      縦向きのスマートフォンでお楽しみください。パソコンの場合、ウィンドウ幅を縮めることで閲覧可能となります。
     </Message>
   </Root>
 )
