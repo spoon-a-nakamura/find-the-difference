@@ -36,7 +36,8 @@ const ContainerWrapper = styled(motion.div)`
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
   text-align: center;
-  background: ${colors.paleGreen} url(/images/common/bg.svg) center / cover;
+  background: ${colors.paleGreen} url(/images/common/bg.svg) 50% / 9.3rem
+    13.4rem repeat;
 `;
 
 const Main = styled(motion.div)`
