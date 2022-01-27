@@ -19,7 +19,7 @@ export default function Splash() {
     duration: 2,
   };
   return (
-    <Link href="menu">
+    <Link href="/menu" passHref>
       <Wrapper>
         <Content>
           <Title>
