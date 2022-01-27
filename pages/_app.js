@@ -4,7 +4,23 @@ import { adobeLoader } from '../fonts/adobeLoader';
 import { AnimateSharedLayout } from 'framer-motion';
 import GlobalCss from '../components/GlobalCss';
 
+const useVhProperty = () => {
+  useEffect(() => {
+    const updateVhProperty = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    updateVhProperty();
+    window.addEventListener('resize', updateVhProperty);
+    return () => {
+      document.documentElement.style.removeProperty('--vh');
+      window.removeEventListener('resize', updateVhProperty);
+    };
+  }, []);
+};
+
 export default function App({ Component, pageProps, router }) {
+  useVhProperty();
   useEffect(() => {
     if (process.browser) adobeLoader(document);
   }, []);
