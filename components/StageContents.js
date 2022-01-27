@@ -186,7 +186,7 @@ export default function StageContents({ question }) {
           <CanvasWrapper onClick={penalty}>
             <Nice isNice={isNice} />
             <CanvasA>
-              <Art src={stageImageA} width="332" height="249" />
+              <Art src={stageImageA} width="332" height="249" alt="" />
               {points.map(({ top, left }, index) => (
                 <CorrectPoint
                   key={index}
@@ -199,7 +199,7 @@ export default function StageContents({ question }) {
               ))}
             </CanvasA>
             <CanvasB>
-              <Art src={stageImageB} width="332" height="249" />
+              <Art src={stageImageB} width="332" height="249" alt="" />
               {points.map(({ top, left }, index) => (
                 <CorrectPoint
                   key={index}
@@ -235,6 +235,7 @@ const StageWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 2rem 0;
 `;
 const CanvasWrapper = styled.div`
   position: relative;

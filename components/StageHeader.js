@@ -43,6 +43,7 @@ const StageHeaderWrapper = styled.header`
 `;
 const HomeButton = styled.img`
   position: relative;
+  width: 2.938rem;
 `;
 const StageHeaderTitle = styled.h1`
   display: flex;
