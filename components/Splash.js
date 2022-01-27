@@ -21,30 +21,39 @@ export default function Splash() {
   return (
     <Link href="menu">
       <Wrapper>
-        <Title>
-          <TitleSub>スタジオスプーンの</TitleSub>
-          <TitleMain>まちがい探し</TitleMain>
-        </Title>
-        <Character eyeAnimate={eyeAnimate} />
-        <Start animate={startAnimate} transition={startTransition}>
-          TAP TO START
-        </Start>
+        <Content>
+          <Title>
+            <TitleSub>スタジオスプーンの</TitleSub>
+            <TitleMain>まちがい探し</TitleMain>
+          </Title>
+          <CharacterWrapper>
+            <Character eyeAnimate={eyeAnimate} />
+          </CharacterWrapper>
+          <Start animate={startAnimate} transition={startTransition}>
+            TAP TO START
+          </Start>
+        </Content>
       </Wrapper>
     </Link>
   );
 }
 
-const Wrapper = styled.div`
-  position: fixed;
+const Wrapper = styled.a`
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
   background: ${colors.green};
-  transition: all 0.5s ease-in-out;
+  min-height: calc(var(--vh, 1vh) * 100);
 `;
+
+const Content = styled.div`
+  margin: auto;
+  padding: 2rem;
+`;
+
+const CharacterWrapper = styled.div`
+  margin-top: 4rem;
+`;
+
 const Title = styled.div`
   color: ${colors.white};
   text-align: center;
@@ -64,4 +73,5 @@ const Start = styled(motion.div)`
   color: ${colors.white};
   margin-top: -5vw;
   margin-bottom: 8vw;
+  text-align: center;
 `;

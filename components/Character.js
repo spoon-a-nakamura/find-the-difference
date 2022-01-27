@@ -23,7 +23,7 @@ const Base = styled(motion.div)`
   justify-content: center;
   z-index: 0;
   position: relative;
-  margin: 10vw auto 0;
+  margin: auto;
 `;
 const LeftEye = styled(motion.div)`
   width: 5.1rem;
