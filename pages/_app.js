@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { adobeLoader } from '../fonts/adobeLoader';
 import { AnimateSharedLayout } from 'framer-motion';
 import GlobalCss from '../components/GlobalCss';
+import DeviceMessage from '../components/DeviceMessage';
 
 const useVhProperty = () => {
   useEffect(() => {
@@ -91,6 +92,7 @@ export default function App({ Component, pageProps, router }) {
       <AnimateSharedLayout>
         <Component {...pageProps} />
       </AnimateSharedLayout>
+      <DeviceMessage />
     </>
   );
 }

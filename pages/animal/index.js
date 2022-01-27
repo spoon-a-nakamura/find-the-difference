@@ -3,7 +3,7 @@ import Mission from '../../components/Mission';
 const courseValues = {
   categoryName: 'どうぶつ',
   categoryNumber: '01',
-  href: 'animal/1',
+  href: '/animal/1',
 };
 
 export default function CourseAnimals() {
