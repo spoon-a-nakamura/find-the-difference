@@ -13,9 +13,6 @@ export default function Menu() {
   const tagAnimateAnimal = {
     rotate: [0, 5, -2, 10, -3, 0],
   };
-  const tagAnimateMagic = {
-    rotate: [0, 10, 3, 4, 0],
-  };
   const tagTransition = {
     repeat: Infinity,
     repeatDelay: 1,
@@ -58,15 +55,16 @@ export default function Menu() {
                 <AnimalCardCaption>ANIMAL</AnimalCardCaption>
               </AnimalCard>
             </Link>
-            <Link href="/magic" passHref>
-              <MagicCard>
-                <MagicCardTag
-                  animate={tagAnimateMagic}
-                  transition={tagTransition}
-                />
-                <MagicCardCaption>MAGIC</MagicCardCaption>
-              </MagicCard>
-            </Link>
+            <MagicCard aria-disabled="true">
+              <MagicCardVisual>
+                <MagicCardTag />
+              </MagicCardVisual>
+              <ComingSoonBadge>
+                <ComingSoonMain>COMING SOON</ComingSoonMain>
+                <ComingSoonSub>じゅんびちゅう</ComingSoonSub>
+              </ComingSoonBadge>
+              <MagicCardCaption>MAGIC</MagicCardCaption>
+            </MagicCard>
           </Cards>
         </Course>
       </Wrapper>
@@ -188,14 +186,26 @@ const AnimalCardCaption = styled.p`
   color: ${colors.orange};
 `;
 const MagicCard = styled.div`
-  background: url(/images/menu/img_magic@2x.png) center / contain no-repeat;
   width: 16.3rem;
   height: 27.5rem;
   position: relative;
   display: flex;
   justify-content: center;
+  cursor: not-allowed;
+  user-select: none;
 `;
-const MagicCardTag = styled(motion.div)`
+/* 画像とタグだけをグレーアウトさせ、上に重ねるcoming soonの表示は鮮やかなまま残す */
+const MagicCardVisual = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(/images/menu/img_magic@2x.png) center / contain no-repeat;
+  filter: grayscale(1);
+  opacity: 0.4;
+`;
+const MagicCardTag = styled.div`
   background: url(/images/menu/tag_magic.svg) center / contain no-repeat;
   width: 15.6rem;
   height: 6.1rem;
@@ -203,11 +213,36 @@ const MagicCardTag = styled(motion.div)`
   left: -2rem;
   top: -0.5rem;
 `;
+const ComingSoonBadge = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  width: 13.6rem;
+  padding: 1.2rem 0.6rem 1rem;
+  text-align: center;
+  background: ${colors.white};
+  border: 0.3rem solid ${colors.purple};
+  border-radius: 1.2rem;
+  box-shadow: 0 0.4rem 0 rgba(51, 51, 51, 0.12);
+`;
+const ComingSoonMain = styled.p`
+  font-size: 1.7rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: ${colors.darkPurple};
+`;
+const ComingSoonSub = styled.p`
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 0.7rem;
+  color: ${colors.purple};
+`;
 const MagicCardCaption = styled.p`
   display: block;
   font-size: 1.2rem;
   margin-top: 1rem;
   position: absolute;
   bottom: -2rem;
-  color: ${colors.orange};
+  color: #b3b3b3;
 `;
