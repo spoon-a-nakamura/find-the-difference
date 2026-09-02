@@ -83,9 +83,7 @@ export default function StageModal({
           >
             <StageName isCleared={isCleared} isFinished={isFinished}>
               {isFinished
-                ? `${stageCategory}ステージ`
-                : isCleared
-                ? '全てのステージ'
+                ? `全ての${stageCategory}ステージ`
                 : `${stageCategory}ステージ ${stageId}`}
             </StageName>
             <Result isCleared={isCleared} isFinished={isFinished}>

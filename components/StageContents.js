@@ -57,12 +57,10 @@ export default function StageContents({ question }) {
         // すべて正解した場合の処理
         if (newCheckedState.every((value) => value)) {
           if (nextId) {
-            console.log('setIsCleared');
             setTimeout(() => {
               setIsCleared(true);
             }, 1200);
           } else {
-            console.log('setIsFinished');
             setTimeout(() => {
               setIsFinished(true);
             }, 1200);
